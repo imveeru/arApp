@@ -1,104 +1,92 @@
-<!doctype html>
-<html>
-    <head>
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>GSFK</title>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                reeeedd: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+</head>
+<body>
+    <div class="grid grid-rows-12 grid-cols-1 min-h-[100dvh] min-w-[100dvw] max-h-[100dvh] max-w-[100dvw]">
 
-    <body style="margin: 0; overflow: hidden;">
-        <a-scene
-            vr-mode-ui="enabled: false;"
-            loading-screen="enabled: false;"
-            renderer="logarithmicDepthBuffer: true;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-            id="scene"
-            embedded
-            gesture-detector
-        >
-            <a-assets>
-                <a-asset-item
-                    id="animated-asset"
-                    src="assets/asset.glb"
-                ></a-asset-item>
+        <!-- Profile -->
+        <div class="flex flex-col gap-y-3 bg-blue-800 p-10 rounded-b-3xl row-span-3">
+          <div class="flex text-white gap-x-2 cursor-pointer">
+            <i class="material-icons">menu</i>
+            <i class="material-icons">search</i>
+            <p class="font-regular text-lg">GSFK</p>
+          </div>
+          
+          <div class="flex gap-x-2 items-center mt-4">
+            <p class="p-4 bg-orange-500 rounded-full"></p>
+            <p class="text-white font-semibold text-2xl">Player Name</p>
+          </div>
 
-                <a-asset-item
-                    id="animated-asset2"
-                    src="assets/moon.glb"
-                ></a-asset-item>
+          <div class="flex gap-x-4">
+            <div class="flex gap-x-2 bg-blue-900 p-2 rounded-md">
+              <p class="p-3 bg-yellow-500 rounded-full"></p>
+              <div>
+                <p class="text-white text-lg">Badges</p>
+                <p class="text-white/50 text-lg">350</p>
+              </div>
+            </div>
 
-                <a-asset-item
-                    id="animated-asset3"
-                    src="assets/earth_globe.glb"
-                ></a-asset-item>
-            </a-assets>
+            <div class="flex gap-x-2 bg-blue-900 p-2 rounded-md">
+              <p class="p-3 bg-green-500 rounded-full"></p>
+              <div>
+                <p class="text-white text-lg">Inventory</p>
+                <p class="text-white/50 text-lg">350</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-            <!-- cylinder -->
-            <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/marker.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
-            >
-                <a-entity
-                    id="bowser-model"
-                    scale="0.9999999845074605 0.9999999845074605 0.9999999845074605"
-                    animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset"
-                    class="clickable"
-                    gesture-handler
-                ></a-entity>
-            </a-marker>
+        <!-- Buttons -->
+        <div class="grid grid-cols-2 grid-rows-3 m-6 gap-4 row-span-8 text-3xl">
+          <div class="bg-indigo-800 text-white font-semibold rounded-[3rem] flex justify-center items-center cursor-pointer">
+            <a class="text-center" href="ar.html">Genius <br/>Trial</a>
+          </div>
 
-            <!-- moon -->
-            <a-marker
-                id="animated-marker2"
-                type="pattern"
-                preset="custom"
-                url="assets/moon.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerB"
-            >
-                <a-entity
-                    id="bowser-model"
-                    scale="0.9999999845074605 0.9999999845074605 0.9999999845074605"
-                    animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset2"
-                    class="clickable"
-                    gesture-handler
-                ></a-entity>
-            </a-marker>
+          <div class="bg-indigo-400 text-white font-semibold rounded-[3rem] flex justify-center items-center cursor-pointer">
+            <p class="text-center ">Science Seeker</p>
+          </div>
 
-            <!-- globe -->
-            <a-marker
-                id="animated-marker3"
-                type="pattern"
-                preset="custom"
-                url="assets/globe.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerC"
-            >
-                <a-entity
-                    id="bowser-model"
-                    scale="0.05 0.05 0.05"
-                    animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset3"
-                    class="clickable"
-                    gesture-handler
-                ></a-entity>
-            </a-marker>
+          <div class="bg-indigo-400 text-white font-semibold rounded-[3rem] flex justify-center items-center cursor-pointer">
+            <p class="text-center ">Domestic Discovery</p>
+          </div>
 
-            <a-entity camera></a-entity>
-        </a-scene>
-    </body>
+          <div class="bg-indigo-400 text-white font-semibold rounded-[3rem] flex justify-center items-center cursor-pointer">
+            <p class="text-center ">Home Whiz Zone</p>
+          </div>
+
+          <div class="bg-indigo-400 text-white font-semibold rounded-[3rem] flex justify-center items-center cursor-pointer">
+            <p class="text-center ">Virtual Circuit</p>
+          </div>
+
+          <div class="bg-indigo-400 text-white font-semibold rounded-[3rem] flex justify-center items-center cursor-pointer">
+            <p class="text-center ">Ethereal Insights</p>
+          </div>
+          
+        </div>
+
+        <!-- DirectScan -->
+        <div>
+          <p class="text-xl text-center">Direct Scan</p>
+        </div>
+
+    </div>
+</body>
 </html>
