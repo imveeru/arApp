@@ -1,0 +1,98 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>GSFK</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        reeeedd: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="grid grid-rows-12 grid-cols-1 min-h-[100dvh] min-w-[100dvw] max-h-[100dvh] max-w-[100dvw]">
+
+        <!-- Profile -->
+        <div class="flex flex-col gap-y-3 bg-blue-800 p-5 md:p-10 rounded-b-3xl row-span-3">
+            <div class="flex text-white gap-x-2 cursor-pointer">
+                <i class="material-icons">menu</i>
+                <i class="material-icons">search</i>
+                <p class="font-regular text-lg">GSFK</p>
+            </div>
+
+            <div class="flex gap-x-4 items-center mt-2 md:mt-4 mb-2">
+                <p class="p-3 bg-orange-500 rounded-full"></p>
+                <p class="text-white font-semibold text-2xl md:text-2xl">Player Name</p>
+            </div>
+
+            <div class="flex gap-x-2">
+                <div class="flex gap-x-2 bg-blue-900 p-2 md:p-2 rounded-md">
+                    <p class="p-2 bg-yellow-500 rounded-full"></p>
+                    <div>
+                        <p class="text-white text-2xl md:text-lg">Badges</p>
+                        <p class="text-white/50 text-lg md:text-lg">Coming Soon</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-x-2 bg-blue-900 p-2 md:p-2 rounded-md">
+                    <p class="p-2 bg-green-500 rounded-full"></p>
+                    <div>
+                        <p class="text-white text-2xl md:text-lg">Inventory</p>
+                        <p class="text-white/50 text-lg md:text-lg">350</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="grid grid-cols-2 md:grid-cols-2 grid-rows-3 md:grid-rows-3 m-3 md:m-6 gap-4 row-span-8 text-3xl md:text-3xl">
+
+          <div class="bg-indigo-800 text-white font-semibold rounded-[3rem] flex justify-center items-center cursor-pointer">
+            <a class="text-center" href="ar_gt.html">Genius <br/>Trial</a>
+          </div>
+
+          <div class="bg-indigo-800 text-white font-semibold rounded-[3rem] flex justify-center items-center cursor-pointer">
+            <a class="text-center" href="ar_dd.html">Domestic Discovery</a>
+          </div>
+          
+          <div class="bg-indigo-400 text-white font-semibold rounded-[3rem] flex justify-center items-center cursor-pointer">
+            <p class="text-center ">Science Seeker</p>
+          </div>
+
+          <div class="bg-indigo-400 text-white font-semibold rounded-[3rem] flex justify-center items-center cursor-pointer">
+            <p class="text-center ">Home Whiz Zone</p>
+          </div>
+
+          <div class="bg-indigo-400 text-white font-semibold rounded-[3rem] flex justify-center items-center cursor-pointer">
+            <p class="text-center ">Virtual <br/>Circuit</p>
+          </div>
+
+          <div class="bg-indigo-400 text-white font-semibold rounded-[3rem] flex justify-center items-center cursor-pointer">
+            <p class="text-center ">Ethereal Insights</p>
+          </div>
+        </div>
+
+        <!-- DirectScan -->
+        <div class="text-xl text-center my-auto md:hidden">
+            <p>Direct Scan</p>
+        </div>
+
+    </div>
+</body>
+
+</html>

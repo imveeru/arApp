@@ -25,9 +25,15 @@ loginForm.addEventListener("submit", (e) => {
     .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
+        errorDiv.innerText=""
+        localStorage.setItem("userName",data["name"]);
+        localStorage.setItem("userEmail",data["email"]);
+        localStorage.setItem("userId",data["userId"]);
+        window.location.href = "home.html";
     })
     .catch(error => {
         console.error('Error:', error);
+        errorDiv.innerText=error
     });
 
 });
