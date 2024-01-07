@@ -46,6 +46,22 @@
               text-decoration: none;
               font-family: sans-serif;
             }
+
+
+            .timer{
+                padding: 0.25rem;
+                border-radius: 4px;
+                border: none;
+                background: white;
+                color: black;
+                width: 4rem;
+                height: 2rem;
+                margin-left: auto;
+                font-family: sans-serif;
+                font-weight: bold;
+                text-align: center;
+                margin-right: 1em;
+            }
         </style>
     </head>
 
@@ -54,6 +70,7 @@
             <a href="index.html" class="say-hi-button text-lg font-bold">
                 <i class="material-icons">arrow_back</i> Back
             </a>
+            <p id="timer" class="timer"></p>
         </div>
         <a-scene
             embedded
@@ -63,6 +80,7 @@
         >
                 <a-image
                     src="assets/GT_Card_1.png"
+                    id="ar-marker-1"
                     look-at="[gps-camera]"
                     scale="1 1 1"
                     gps-entity-place="latitude: 8.50922; longitude: 76.96144;"
@@ -70,6 +88,7 @@
 
                 <a-image
                     src="assets/GT_Card_2.png"
+                    id="ar-marker-2"
                     look-at="[gps-camera]"
                     scale="1 1 1"
                     gps-entity-place="latitude: 8.50877; longitude: 76.95818;" 
@@ -77,6 +96,7 @@
 
                 <a-image
                     src="assets/GT_Card_3.png"
+                    id="ar-marker-3"
                     look-at="[gps-camera]"
                     scale="1 1 1"
                     gps-entity-place="latitude: 8.50967; longitude: 76.95781;" 
@@ -84,6 +104,7 @@
 
                 <a-image
                     src="assets/GT_Card_4.png"
+                    id="ar-marker-4"
                     look-at="[gps-camera]"
                     scale="1 1 1"
                     gps-entity-place="latitude: 8.50915; longitude: 76.95636;"
@@ -91,6 +112,7 @@
 
                 <a-image
                     src="assets/GT_Card_5.png"
+                    id="ar-marker-5"
                     look-at="[gps-camera]"
                     scale="1 1 1"
                     gps-entity-place="latitude: 8.51000; longitude: 76.94688;"
@@ -98,12 +120,14 @@
 
                 <a-image
                     src="assets/GT_Card_6.png"
+                    id="ar-marker-6"
                     look-at="[gps-camera]"
                     scale="1 1 1"
                     gps-entity-place="latitude: 8.5063320; longitude: 76.95197;"                 ></a-image>
 
                 <a-image
                     src="assets/GT_Card_7.png"
+                    id="ar-marker-7"
                     look-at="[gps-camera]"
                     scale="1 1 1"
                     gps-entity-place="latitude: 8.50477; longitude: 76.95120;" 
