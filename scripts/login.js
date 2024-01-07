@@ -26,7 +26,7 @@ loginForm.addEventListener("submit", (e) => {
     .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
-        errorDiv.innerText=""
+        errorDiv.innerText="";
         localStorage.setItem("userName",data["name"]);
         localStorage.setItem("userEmail",data["email"]);
         localStorage.setItem("userId",data["userId"]);
@@ -34,7 +34,7 @@ loginForm.addEventListener("submit", (e) => {
     })
     .catch(error => {
         console.error('Error:', error);
-        errorDiv.innerText=error
+        errorDiv.innerText=error;
     });
 
 });
