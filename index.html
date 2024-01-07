@@ -3,90 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <title>GSFK</title>
-    <script>
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                reeeedd: '#da373d',
-              }
-            }
-          }
-        }
-      </script>
+    <title>GFSK</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="grid grid-rows-12 grid-cols-1 min-h-[100dvh] min-w-[100dvw] max-h-[100dvh] max-w-[100dvw]">
+<body class="bg-gray-100">
 
-        <!-- Profile -->
-        <div class="flex flex-col gap-y-3 bg-blue-800 p-10 rounded-b-3xl row-span-3">
-          <div class="flex text-white gap-x-2 cursor-pointer">
-            <i class="material-icons">menu</i>
-            <i class="material-icons">search</i>
-            <p class="font-regular text-lg">GSFK</p>
-          </div>
-          
-          <div class="flex gap-x-2 items-center mt-4">
-            <p class="p-4 bg-orange-500 rounded-full"></p>
-            <p class="text-white font-semibold text-2xl">Player Name</p>
-          </div>
+<div class="flex items-center justify-center min-h-screen">
+    <div class="max-w-md w-full p-6 bg-white rounded-md shadow-md">
 
-          <div class="flex gap-x-4">
-            <div class="flex gap-x-2 bg-blue-900 p-2 rounded-md">
-              <p class="p-3 bg-yellow-500 rounded-full"></p>
-              <div>
-                <p class="text-white text-lg">Badges</p>
-                <p class="text-white/50 text-lg">350</p>
-              </div>
-            </div>
-
-            <div class="flex gap-x-2 bg-blue-900 p-2 rounded-md">
-              <p class="p-3 bg-green-500 rounded-full"></p>
-              <div>
-                <p class="text-white text-lg">Inventory</p>
-                <p class="text-white/50 text-lg">350</p>
-              </div>
-            </div>
-          </div>
+        <!-- Login Form -->
+        <div id="login" class="mb-4">
+            <h2 class="text-2xl font-semibold mb-4">Login</h2>
+            <form action="#" method="post">
+                <div class="mb-4">
+                    <label for="loginEmail" class="block text-sm font-medium text-gray-600">Email</label>
+                    <input type="email" id="loginEmail" name="loginEmail" class="mt-1 p-2 w-full border rounded-md">
+                </div>
+                <div class="mb-4">
+                    <label for="loginPassword" class="block text-sm font-medium text-gray-600">Password</label>
+                    <input type="password" id="loginPassword" name="loginPassword" class="mt-1 p-2 w-full border rounded-md">
+                </div>
+                <button type="submit" class="bg-blue-500 text-white p-2 rounded-md w-full">Login</button>
+            </form>
         </div>
 
-        <!-- Buttons -->
-        <div class="grid grid-cols-2 grid-rows-3 m-6 gap-4 row-span-8 text-3xl">
-          <div class="bg-indigo-800 text-white font-semibold rounded-[3rem] flex justify-center items-center cursor-pointer">
-            <a class="text-center" href="ar.html">Genius <br/>Trial</a>
-          </div>
-
-          <div class="bg-indigo-400 text-white font-semibold rounded-[3rem] flex justify-center items-center cursor-pointer">
-            <p class="text-center ">Science Seeker</p>
-          </div>
-
-          <div class="bg-indigo-400 text-white font-semibold rounded-[3rem] flex justify-center items-center cursor-pointer">
-            <p class="text-center ">Domestic Discovery</p>
-          </div>
-
-          <div class="bg-indigo-400 text-white font-semibold rounded-[3rem] flex justify-center items-center cursor-pointer">
-            <p class="text-center ">Home Whiz Zone</p>
-          </div>
-
-          <div class="bg-indigo-400 text-white font-semibold rounded-[3rem] flex justify-center items-center cursor-pointer">
-            <p class="text-center ">Virtual Circuit</p>
-          </div>
-
-          <div class="bg-indigo-400 text-white font-semibold rounded-[3rem] flex justify-center items-center cursor-pointer">
-            <p class="text-center ">Ethereal Insights</p>
-          </div>
-          
-        </div>
-
-        <!-- DirectScan -->
-        <div>
-          <p class="text-xl text-center">Direct Scan</p>
+        <!-- Register Form -->
+        <div id="register">
+            <h2 class="text-2xl font-semibold mb-4">Register</h2>
+            <form action="#" method="post">
+                <div class="mb-4">
+                    <label for="registerName" class="block text-sm font-medium text-gray-600">Name</label>
+                    <input type="text" id="registerName" name="registerName" class="mt-1 p-2 w-full border rounded-md">
+                </div>
+                <div class="mb-4">
+                    <label for="registerEmail" class="block text-sm font-medium text-gray-600">Email</label>
+                    <input type="email" id="registerEmail" name="registerEmail" class="mt-1 p-2 w-full border rounded-md">
+                </div>
+                <div class="mb-4">
+                    <label for="registerPassword" class="block text-sm font-medium text-gray-600">Password</label>
+                    <input type="password" id="registerPassword" name="registerPassword" class="mt-1 p-2 w-full border rounded-md">
+                </div>
+                <button type="submit" class="bg-green-500 text-white p-2 rounded-md w-full">Register</button>
+            </form>
         </div>
 
     </div>
+</div>
+
 </body>
 </html>
