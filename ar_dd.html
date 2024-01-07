@@ -42,15 +42,15 @@
 
 
         <script>
-            AFRAME.registerComponent('markerhandler', {
-              init: function () {
-                this.el.sceneEl.addEventListener('markerFound', () => {
-                  // redirect to custom URL e.g. google.com
-                  // window.location = 'https://www.google.com/';
-                  //alert("Hi there!");
-                })
-              }
-            });
+            // AFRAME.registerComponent('markerhandler', {
+            //   init: function () {
+            //     this.el.sceneEl.addEventListener('markerFound', () => {
+            //       // redirect to custom URL e.g. google.com
+            //       // window.location = 'https://www.google.com/';
+            //       //alert("Hi there!");
+            //     })
+            //   }
+            // });
         </script>
 
     </head>
@@ -99,7 +99,7 @@
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
-                markerhandler
+                
             >
                 <a-entity
                     id="bowser-model"
@@ -121,6 +121,7 @@
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerB"
+                
             >
                 <a-entity
                     id="bowser-model"
@@ -155,5 +156,7 @@
 
             <a-entity camera></a-entity>
         </a-scene>
+
+        <script src="scripts/ar_dd.js"></script>
     </body>
 </html>
