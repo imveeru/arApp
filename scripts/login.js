@@ -14,13 +14,12 @@ loginForm.addEventListener("submit", (e) => {
 
     const apiUrl = "https://gfsk-backend.onrender.com/login";
 
-    fetch(apiUrl, {
+    fetch(apiUrl,{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            // Add any additional headers as needed
         },
-        mode: 'no-cors',
+        mode: 'cors',
         body: JSON.stringify(jsonData),
     })
     .then(response => response.json())
