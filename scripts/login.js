@@ -20,7 +20,7 @@ loginForm.addEventListener("submit", (e) => {
             'Content-Type': 'application/json',
             // Add any additional headers as needed
         },
-        mode: 'cors',
+        mode: 'no-cors',
         body: JSON.stringify(jsonData),
     })
     .then(response => response.json())
