@@ -51,11 +51,10 @@ marker1.addEventListener("markerFound", (e)=>{
     stopStopwatch();
     const jsonData={
         "userId":localStorage.getItem("userId"),
-        "gameId":"GT",
-        "points":Math.ceil(100/minutes) 
+        "invId":"G",
     }
 
-    const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+    const apiUrl = "https://gfsk-backend.onrender.com/add-inv";
 
     fetch(apiUrl,{
         method: 'POST',
@@ -79,11 +78,10 @@ marker2.addEventListener("markerFound", (e)=>{
     stopStopwatch();
     const jsonData={
         "userId":localStorage.getItem("userId"),
-        "gameId":"GT",
-        "points":Math.ceil(100/minutes) 
+        "invId":"B",
     }
 
-    const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+    const apiUrl = "https://gfsk-backend.onrender.com/add-inv";
 
     fetch(apiUrl,{
         method: 'POST',
@@ -107,11 +105,10 @@ marker3.addEventListener("markerFound", (e)=>{
     stopStopwatch();
     const jsonData={
         "userId":localStorage.getItem("userId"),
-        "gameId":"GT",
-        "points":Math.ceil(100/minutes) 
+        "invId":"C",
     }
 
-    const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+    const apiUrl = "https://gfsk-backend.onrender.com/add-inv";
 
     fetch(apiUrl,{
         method: 'POST',
@@ -135,11 +132,10 @@ marker4.addEventListener("markerFound", (e)=>{
     stopStopwatch();
     const jsonData={
         "userId":localStorage.getItem("userId"),
-        "gameId":"GT",
-        "points":Math.ceil(100/minutes) 
+        "invId":"D",
     }
 
-    const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+    const apiUrl = "https://gfsk-backend.onrender.com/add-inv";
 
     fetch(apiUrl,{
         method: 'POST',
@@ -163,11 +159,10 @@ marker5.addEventListener("markerFound", (e)=>{
     stopStopwatch();
     const jsonData={
         "userId":localStorage.getItem("userId"),
-        "gameId":"GT",
-        "points":Math.ceil(100/minutes) 
+        "invId":"E",
     }
 
-    const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+    const apiUrl = "https://gfsk-backend.onrender.com/add-inv";
 
     fetch(apiUrl,{
         method: 'POST',
@@ -191,11 +186,10 @@ marker6.addEventListener("markerFound", (e)=>{
     stopStopwatch();
     const jsonData={
         "userId":localStorage.getItem("userId"),
-        "gameId":"GT",
-        "points":Math.ceil(100/minutes) 
+        "invId":"F",
     }
 
-    const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+    const apiUrl = "https://gfsk-backend.onrender.com/add-inv";
 
     fetch(apiUrl,{
         method: 'POST',
@@ -219,11 +213,11 @@ marker7.addEventListener("markerFound", (e)=>{
     stopStopwatch();
     const jsonData={
         "userId":localStorage.getItem("userId"),
-        "gameId":"GT",
-        "points":Math.ceil(100/minutes) 
+        "invId":"G",
+        //"points":Math.ceil(100/minutes) 
     }
 
-    const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+    const apiUrl = "https://gfsk-backend.onrender.com/add-inv";
 
     fetch(apiUrl,{
         method: 'POST',
