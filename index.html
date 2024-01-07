@@ -8,47 +8,29 @@
 </head>
 <body class="bg-gray-100">
 
-<div class="flex items-center justify-center min-h-screen">
-    <div class="max-w-md w-full p-6 bg-white rounded-md shadow-md">
-
-        <!-- Login Form -->
-        <div id="login" class="mb-4">
-            <h2 class="text-2xl font-semibold mb-4">Login</h2>
-            <form action="#" method="post">
-                <div class="mb-4">
-                    <label for="loginEmail" class="block text-sm font-medium text-gray-600">Email</label>
-                    <input type="email" id="loginEmail" name="loginEmail" class="mt-1 p-2 w-full border rounded-md">
-                </div>
-                <div class="mb-4">
-                    <label for="loginPassword" class="block text-sm font-medium text-gray-600">Password</label>
-                    <input type="password" id="loginPassword" name="loginPassword" class="mt-1 p-2 w-full border rounded-md">
-                </div>
-                <button type="submit" class="bg-blue-500 text-white p-2 rounded-md w-full">Login</button>
-            </form>
-        </div>
-
-        <!-- Register Form -->
-        <div id="register">
-            <h2 class="text-2xl font-semibold mb-4">Register</h2>
-            <form action="#" method="post">
-                <div class="mb-4">
-                    <label for="registerName" class="block text-sm font-medium text-gray-600">Name</label>
-                    <input type="text" id="registerName" name="registerName" class="mt-1 p-2 w-full border rounded-md">
-                </div>
-                <div class="mb-4">
-                    <label for="registerEmail" class="block text-sm font-medium text-gray-600">Email</label>
-                    <input type="email" id="registerEmail" name="registerEmail" class="mt-1 p-2 w-full border rounded-md">
-                </div>
-                <div class="mb-4">
-                    <label for="registerPassword" class="block text-sm font-medium text-gray-600">Password</label>
-                    <input type="password" id="registerPassword" name="registerPassword" class="mt-1 p-2 w-full border rounded-md">
-                </div>
-                <button type="submit" class="bg-green-500 text-white p-2 rounded-md w-full">Register</button>
-            </form>
-        </div>
-
+    <div class="container mx-auto py-5 px-4 md:px-10">
+        <div class="w-full max-w-xs mx-auto">
+        <form class="px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">
+                Username
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Username">
+            </div>
+            <div class="mb-6">
+            <label class="block text-gray-700 text-sm font-bold mb-2">
+                Password
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="******************">
+            </div>
+            <div class="flex items-center justify-between">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                Submit
+            </button>
+            </div>
+        </form>
     </div>
-</div>
+    </div>
 
 </body>
 </html>
