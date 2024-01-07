@@ -3,45 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>GFSK</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container mx-auto py-5 px-4 md:px-10">
-        <div class="w-full max-w-xs mx-auto">
-    
-        <form class="px-8 pt-6 pb-8 mb-4">
+<body class="bg-blue-800 flex align-center items-center min-h-[100dvh] min-w-[100dvw] max-h-[100dvh] max-w-[100dvw]" style="height: 100dvh;">
+
+    <div class="mx-auto w-full py-5 px-4 md:px-10 my-auto">
+        <div class="w-full my-auto max-w-xs mx-auto">
+        <form class="px-8 pt-6 pb-8 mb-4" id="loginForm">
+            <p class="mb-4 text-2xl font-bold text-white">Register</p>
+            <p class="mb-4 text-sm bg-white rounded text-red-500" id="errDiv"></p>
             <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2">
+            <label class="block text-white text-sm mb-2">
                 Username
             </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Username">
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Example Name" id="name">
             </div>
             <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2">
-                Email
+            <label class="block text-white text-sm mb-2">
+                eMail
             </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="email" placeholder="Email">
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline" type="email" placeholder="example@example.com" id="email">
             </div>
             <div class="mb-6">
-            <label class="block text-gray-700 text-sm font-bold mb-2">
+            <label class="block text-white text-sm  mb-2">
                 Password
             </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="******************">
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-black mb-3 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="******************" id="pwd">
             </div>
-            <div class="mb-6">
-            <label class="block text-gray-700 text sm font-bold mb-2">
-                Confirm Password
-            </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="******************">
-            </div>
-            <div class="flex items-center justify-between">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                Register
+            <div class="flex items-center justify-between mb-4">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                Login
             </button>
             </div>
+            <a class="mt-4 text-sm text-white" href="register.html">New User? Regsiter</a>
+            <p class="mt-4 text-sm text-white opacity-40">Kindly allow all permissions by going to Settings -> Apps -> Search for GSFK App -> Enable all permissions </p>
         </form>
     </div>
     </div>
+
+
+    <script src="scripts/login.js"></script>
 </body>
 </html>
