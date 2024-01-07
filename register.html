@@ -10,7 +10,7 @@
 
     <div class="mx-auto w-full py-5 px-4 md:px-10 my-auto">
         <div class="w-full my-auto max-w-xs mx-auto">
-        <form class="px-8 pt-6 pb-8 mb-4" id="loginForm">
+        <form class="px-8 pt-6 pb-8 mb-4" id="registrationForm">
             <p class="mb-4 text-2xl font-bold text-white">Register</p>
             <p class="mb-4 text-sm bg-white rounded text-red-500" id="errDiv"></p>
             <div class="mb-4">
@@ -33,16 +33,17 @@
             </div>
             <div class="flex items-center justify-between mb-4">
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-                Login
+                Register
             </button>
             </div>
-            <a class="mt-4 text-sm text-white" href="register.html">New User? Regsiter</a>
+            <p class="mt-4 text-sm text-white" style="display: none;" id="successText">You've been successfully registered! Login by clicking the below text.</p>
+            <a class="mt-4 text-sm text-white" href="index.html">Existing User? Login</a>
             <p class="mt-4 text-sm text-white opacity-40">Kindly allow all permissions by going to Settings -> Apps -> Search for GSFK App -> Enable all permissions </p>
         </form>
     </div>
     </div>
 
 
-    <script src="scripts/login.js"></script>
+    <script src="scripts/register.js"></script>
 </body>
 </html>
