@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>GSFK</title>
     <script>
         tailwind.config = {
@@ -21,9 +21,52 @@
             }
         }
     </script>
+    <style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 1,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        </style>
 </head>
 
 <body class="bg-gray-100">
+
+    <div style="visibility: visible;" class="absolute bg-blue-800/90 bg-clip-padding backdrop-filter backdrop-blur-sm w-full h-[100dvh] bg-black text-white py-6 px-8">
+        <i id="navClose" class="text-3xl material-icons">close</i>
+        <div class="flex flex-col gap-y-8 my-6">
+            <p class="text-2xl flex gap-x-4 items-center">
+                <i class="material-icons">settings</i> Settings
+            </p>
+            <p class="text-2xl flex gap-x-4 items-center">
+                <span class="material-symbols-outlined">
+                    person
+                    </span> Profile
+            </p>
+            <p class="text-2xl flex gap-x-4 items-center">
+                <span class="material-symbols-outlined">
+                    trophy
+                    </span> Leaderboard
+            </p>
+            <p class="text-2xl flex gap-x-4 items-center">
+                <i class="material-icons">settings</i> News
+            </p>
+            <p class="text-2xl flex gap-x-4 items-center">
+                <i class="material-icons">info</i> About GSFK
+            </p>
+            <p class="text-2xl flex gap-x-4 items-center">
+                <i class="material-icons">library_books</i> Tickets
+            </p>
+            <p class="text-2xl flex gap-x-4 items-center">
+                <i class="material-icons">star</i> Special Features
+            </p>
+            <p class="text-2xl flex gap-x-4 items-center">
+                <i class="material-icons">help</i> Help
+            </p>
+        </div>
+    </div>
 
     <div class="grid grid-rows-12 grid-cols-1 min-h-[100dvh] min-w-[100dvw] max-h-[100dvh] max-w-[100dvw]">
 
