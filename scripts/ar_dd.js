@@ -2,6 +2,9 @@ let marker1=document.getElementById('animated-marker')
 let marker2=document.getElementById('animated-marker2')
 let marker3=document.getElementById('animated-marker3')
 
+let test=document.getElementById("animated-marker3")
+console.log(test.children[0].attr)
+
 let timerInterval;
 let totalSeconds = 0;
 let minutes;
