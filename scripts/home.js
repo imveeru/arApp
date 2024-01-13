@@ -21,3 +21,15 @@ fetch(apiUrl, {
 .catch(error => {
     console.error('Error:', error);
 });
+
+let navOpen=document.getElementById("navOpen")
+let navClose=document.getElementById("navClose")
+let navBar=document.getElementById("navBar")
+
+function openNav(){
+    navBar.style.visibility="visible"
+}
+
+function closeNav(){
+    navBar.style.visibility="hidden"
+}

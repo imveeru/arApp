@@ -34,8 +34,8 @@
 
 <body class="bg-gray-100">
 
-    <div style="visibility: visible;" class="absolute bg-blue-800/90 bg-clip-padding backdrop-filter backdrop-blur-sm w-full h-[100dvh] bg-black text-white py-6 px-8">
-        <i id="navClose" class="text-3xl material-icons">close</i>
+    <div id="navBar" style="visibility: visible;" class="absolute bg-blue-800/90 bg-clip-padding backdrop-filter backdrop-blur-sm w-full h-[100dvh] bg-black text-white py-6 px-8">
+        <i onclick="closeNav()" id="navClose" class="text-3xl material-icons">close</i>
         <div class="flex flex-col gap-y-8 my-6">
             <p class="text-2xl flex gap-x-4 items-center">
                 <i class="material-icons">settings</i> Settings
@@ -73,7 +73,7 @@
         <!-- Profile -->
         <div class="flex flex-col gap-y-3 bg-blue-800 p-5 md:p-10 rounded-b-3xl row-span-3">
             <div class="flex text-white gap-x-2 cursor-pointer">
-                <i class="material-icons">menu</i>
+                <i onclick="openNav()" id="navOpen" class="material-icons">menu</i>
                 <i class="material-icons">search</i>
                 <p class="font-regular text-lg">GSFK</p>
             </div>
