@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Hint-GT</title>
 </head>
 <body class="bg-blue-800">
+    <a id="nextBtn" class="mx-auto text-white cursor-pointer rounded-lg drop-shadow-lg text-center py-6 px-12 flex items-center" href="home.html">
+        <i class="material-icons">arrow_back</i> Back
+    </a>
+    
     <div id="one" style="display: block;">
-        <div class="text-white p-12 m-2">
+        <div class="text-white px-12 py-6 m-2">
             <p class="text-white text-3xl font-bold border-b boder-white pb-3 mb-4 ">Genius Trail</p>
             <p class="mt-4 text-2xl font-bold">
                 Welcome to the Genius Trail! Uncover the Stories of Scientific Pioneers - Your Scientific Adventure Awaits! 🚀
@@ -16,16 +21,22 @@
             <p class="mt-2 text-xl font-thin opacity-70">
                 You're about to embark on a journey that will take you to seven unique locations, each holding the secrets of groundbreaking scientists and their extraordinary contributions to the world of knowledge. As you traverse the physical world, you'll unlock the fascinating stories of scientific innovation, one discovery at a time.
             </p>
-            <p class="mt-2 text-xl">
-                Explore: Utilize your GPS to find and reach each of the seven locations marked on the map. Every place is a window into the life and work of a renowned scientist.
-
-                Discover: Once you arrive at a designated location, you will find fascinating information about a scientist or a scientific discovery. Immerse yourself in their achievements and contributions.
-
-                Learn and Share: As you learn about scientists and their accomplishments, consider sharing your newfound wisdom with friends and family, through social media, sparking their curiosity and admiration for the world of science.
-
-                Collect Rewards: With each discovery, you'll accumulate knowledge and unlock rewards that will help you progress further along the Genius Trail.
-            </p>
-        
+            <div class="mt-2 text-xl flex gap-x-2">
+               <img src="ui_assets/Group 4.png" class="w-[100px] h-[120%]"/>
+               <p>Explore: Utilize your GPS to find and reach each of the seven locations marked on the map. Every place is a window into the life and work of a renowned scientist.</p>
+            </div>
+            <div class="mt-2 text-xl flex gap-x-2">
+                <img src="ui_assets/trading-card 1.png" class="w-[100px] h-[120%]"/>
+                <p>Discover: Once you arrive at a designated location, you will find fascinating information about a scientist or a scientific discovery. Immerse yourself in their achievements and contributions.</p>
+             </div>
+             <div class="mt-2 text-xl flex gap-x-2">
+                <img src="ui_assets/sharing 1.png" class="w-[100px] h-[120%]"/>
+                <p>Learn and Share: As you learn about scientists and their accomplishments, consider sharing your newfound wisdom with friends and family, through social media, sparking their curiosity and admiration for the world of science.</p>
+             </div>
+             <div class="mt-2 text-xl flex gap-x-2">
+                <img src="ui_assets/giftbox.png" class="w-[100px] h-[120%]"/>
+                <p>Collect Rewards: With each discovery, you'll accumulate knowledge and unlock rewards that will help you progress further along the Genius Trail.</p>
+             </div>
         </div>
         <div class="flex items-center align-center justify-center my-8">
             <a onclick="changePage()" id="next-btn" class="bg-white p-4 rounded text-black text-center text-2xl">Next</a>
