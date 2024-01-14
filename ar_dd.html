@@ -96,20 +96,66 @@
             from {bottom: 30px; opacity: 1;}
             to {bottom: 0; opacity: 0;}
             }
+
+            #popupContainer{
+                position: absolute;
+                background: rgba(0, 0, 0,0.96);
+                z-index: 999999999999999999999999999999;
+                height: 100vh;
+                width: 100vw;
+                top: 0;
+                left: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .popup{
+                background: white;
+                width: 80vw;
+                height: 60vh;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 1rem;
+                border-radius: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                font-family: sans-serif;
+                font-size: large;
+            }
+
+            .popup>img{
+                width: 70%;
+                opacity: 60%;
+            }
+
+            .popupBtns{
+                display: flex;
+                gap: 1rem;
+            }
+
+            .popupBtn1{
+                padding: 1.5rem;
+                background: #1D40AF;
+                border-radius: 1rem;
+                color: white;
+            }
+
+            .popupBtn2{
+                padding: 1.5rem;
+                border-style:solid;
+                border-width: 2px;
+                border-color: #1D40AF;
+                border-radius: 1rem;
+                color: #1D40AF;
+            }
+
+            a{
+                text-decoration: none;
+            }
         </style>
-
-
-        <script>
-            // AFRAME.registerComponent('markerhandler', {
-            //   init: function () {
-            //     this.el.sceneEl.addEventListener('markerFound', () => {
-            //       // redirect to custom URL e.g. google.com
-            //       // window.location = 'https://www.google.com/';
-            //       //alert("Hi there!");
-            //     })
-            //   }
-            // });
-        </script>
         <meta charset='utf-8'>
     </head>
 
@@ -121,6 +167,23 @@
             </a>
             <p id="timer" class="timer"></p>
             <div id="snackbar"></div>
+        </div>
+
+        <div id="popupContainer" style="visibility: hidden;" class="absolute z-50 bg-black min-h-[100dvh] min-w-[100dvw]">
+            <div class="popup">
+                <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/9afd3b92ab41ffca7f368a8fcbd6d39a75894efe0edbc14cf1f067cf625e6678.png"/>
+                <p>boohoo!</p>
+                <div class="popupBtns">
+                    <a class="popupBtn2" href="home.html">
+                        Give up
+                    </a>
+                    <a class="popupBtn1" href="ar_dd.html">
+                        Try Again
+                    </a>
+                </div>
+                
+
+            </div>
         </div>
 
         <a-scene

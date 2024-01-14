@@ -46,6 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
     startStopwatch();
 });
 
+let popup=document.getElementById("popupContainer")
+
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
@@ -83,7 +85,7 @@ marker1.addEventListener("markerFound", (e)=>{
             console.error('Error:', error);
         });
     }else{
-        
+        popup.style.visibility="visible";
     }
 
 
