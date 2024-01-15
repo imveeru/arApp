@@ -48,6 +48,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
 let popup=document.getElementById("popupContainer")
 
+const shareSS=async(imgFile)=>{
+    // if (!navigator.canShare({files:imgFile})) {
+    //     alert(`Your browser doesn't support the Web Share API.`);
+    //     return;
+    // }
+
+    // if (navigator.canShare({ imgFile })) {
+        try {
+          await navigator.share({
+            imgFile,
+            title: "Images",
+            text: "Beautiful images",
+          });
+          alert("Shared!");
+        } catch (error) {
+          alert(`Error: ${error.message}`);
+        }
+    //   } else {
+    //     output.textContent = `Your system doesn't support sharing these files.`;
+    //   }
+}
+
+function capture () {
+    html2canvas(document.body).then(canvas => {
+      let a = document.createElement("a");
+      a.download = "ss.png";
+      a.href = canvas.toDataURL("image/png");
+      console.log(a.href);
+      shareSS(a.href)
+    //   a.click(); // MAY NOT ALWAYS WORK!
+    });
+  }
+
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
@@ -61,7 +94,6 @@ marker1.addEventListener("markerFound", (e)=>{
     }
 
     if (currModel==9){
-        //alert("Watha");
         toast.innerHTML="Wow, correct!"
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
@@ -86,6 +118,7 @@ marker1.addEventListener("markerFound", (e)=>{
         });
     }else{
         popup.style.visibility="visible";
+        capture()
     }
 
 
