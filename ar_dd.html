@@ -216,8 +216,18 @@
                 ></a-asset-item>
 
                 <a-asset-item
-                    id="animated-asset4"
+                    id="animated-asset-no"
                     src="assets/no_entry_sign.glb"
+                ></a-asset-item>
+
+                <a-asset-item
+                    id="animated-asset4"
+                    src="models/Match Stick.glb"
+                ></a-asset-item>
+
+                <a-asset-item
+                    id="animated-asset5"
+                    src="models/mosquito.glb"
                 ></a-asset-item>
 
                 <video id="waterVideo" loop="true" autoplay="true" src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" preload="auto"></video>
@@ -285,6 +295,48 @@
                     scale="0.05 0.05 0.05"
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset3"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+
+            <!-- match stick -->
+            <a-marker
+                id="animated-marker4"
+                type="pattern"
+                preset="custom"
+                url="markers/m4.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerC"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset4"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+
+            <!-- mosquito -->
+            <a-marker
+                id="animated-marker5"
+                type="pattern"
+                preset="custom"
+                url="markers/m5.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerC"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset5"
                     class="clickable"
                     gesture-handler
                 ></a-entity>
