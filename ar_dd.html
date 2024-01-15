@@ -220,7 +220,7 @@
                     src="assets/no_entry_sign.glb"
                 ></a-asset-item>
 
-                <video id="waterVideo" loop="true" autoplay="false" src="https://www.youtube.com/watch?v=0X0Jm8QValY" preload="auto"></video>
+                <video id="waterVideo" loop="true" autoplay="true" src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" preload="auto"></video>
             </a-assets>
 
             <!-- cylinder -->
@@ -256,14 +256,17 @@
                 id="markerB"
                 
             >
-                <a-entity
+                <!-- <a-entity
                     id="bowser-model"
                     scale="0.9999999845074605 0.9999999845074605 0.9999999845074605"
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset2"
                     class="clickable"
                     gesture-handler
-                ></a-entity>
+                ></a-entity> -->
+
+                <a-video id="water" rotation="90 0 180" src="#waterVideo" height="1" width="1.78" position="0 0 0" autoplay="true">
+                </a-video>
             </a-marker>
 
             <!-- globe -->
