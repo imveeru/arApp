@@ -48,26 +48,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
 let popup=document.getElementById("popupContainer")
 
-const shareSS=async(imgFile)=>{
-    // if (!navigator.canShare({files:imgFile})) {
-    //     alert(`Your browser doesn't support the Web Share API.`);
-    //     return;
-    // }
+// const shareSS=async(imgFile)=>{
+//     // if (!navigator.canShare({files:imgFile})) {
+//     //     alert(`Your browser doesn't support the Web Share API.`);
+//     //     return;
+//     // }
 
-    // if (navigator.canShare({ imgFile })) {
-        try {
-          await navigator.share({
-            imgFile,
-            title: "Images",
-            text: "Beautiful images",
-          });
-          alert("Shared!");
-        } catch (error) {
-          alert(`Error: ${error.message}`);
-        }
-    //   } else {
-    //     output.textContent = `Your system doesn't support sharing these files.`;
-    //   }
+//     // if (navigator.canShare({ imgFile })) {
+//         try {
+//           await navigator.share({
+//             imgFile,
+//             title: "Images",
+//             text: "Beautiful images",
+//           });
+//           alert("Shared!");
+//         } catch (error) {
+//           alert(`Error: ${error.message}`);
+//         }
+//     //   } else {
+//     //     output.textContent = `Your system doesn't support sharing these files.`;
+//     //   }
+// }
+
+function shareMe(){
+
+    navigator.share({
+        title: 'Web Share Shim',
+        text: 'Check out Web Share Shim — it rocks!',
+        url: 'https://nimiq.github.io/web-share-shim',
+    })
+    .then( _ => console.log('Successful share'))
+    .catch( error => console.log('Error sharing', error));
+    
 }
 
 function capture () {
@@ -76,8 +88,8 @@ function capture () {
       a.download = "ss.png";
       a.href = canvas.toDataURL("image/png");
       console.log(a.href);
-      shareSS(a.href)
-    //   a.click(); // MAY NOT ALWAYS WORK!
+      shareMe();
+    //   a.click();
     });
   }
 
