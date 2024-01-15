@@ -81,10 +81,10 @@ function shareMe(){
       });
 
     navigator.share({
-        imgData,
-        title: 'Web Share Shim',
-        text: 'Check out Web Share Shim — it rocks!',
-        url: 'https://nimiq.github.io/web-share-shim',
+        files:[imgData],
+        title: 'GSFK AR Connect',
+        text: 'Hey all, I\'ve unlocked an achievement in GSFK AR Connect game!',
+        url: '',
     })
     .then( _ => console.log('Successful share'))
     .catch( error => console.log('Error sharing', error));
@@ -147,6 +147,8 @@ marker2.addEventListener("markerFound", (e)=>{
         "gameId":"DD",
         "points":Math.ceil(100/minutes) 
     }
+    
+    console.log(marker2.id)
 
     const apiUrl = "https://gfsk-backend.onrender.com/add-points";
 
