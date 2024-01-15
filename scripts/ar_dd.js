@@ -71,8 +71,17 @@ let popup=document.getElementById("popupContainer")
 // }
 
 function shareMe(){
+    let imgData
+    html2canvas(document.body).then(canvas => {
+        let a = document.createElement("a");
+        a.download = "ss.png";
+        a.href = canvas.toDataURL("image/png");
+        imgData = canvas.toDataURL("image/png");
+        console.log(imgData);
+      });
 
     navigator.share({
+        imgData,
         title: 'Web Share Shim',
         text: 'Check out Web Share Shim — it rocks!',
         url: 'https://nimiq.github.io/web-share-shim',
@@ -83,14 +92,7 @@ function shareMe(){
 }
 
 function capture () {
-    html2canvas(document.body).then(canvas => {
-      let a = document.createElement("a");
-      a.download = "ss.png";
-      a.href = canvas.toDataURL("image/png");
-      console.log(a.href);
-      shareMe();
-    //   a.click();
-    });
+    
   }
 
 //////////////////////////////////////////////////////////////////////////
@@ -110,6 +112,8 @@ marker1.addEventListener("markerFound", (e)=>{
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
     
+        shareMe();
+
         const apiUrl = "https://gfsk-backend.onrender.com/add-points";
 
         fetch(apiUrl,{
