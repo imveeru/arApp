@@ -141,62 +141,46 @@ marker1.addEventListener("markerFound", (e)=>{
 
 })
 
-marker2.addEventListener("markerFound", (e)=>{ 
-    stopStopwatch();
-    successAudio.play();
-    const jsonData={
-        "userId":localStorage.getItem("userId"),
-        "gameId":"DD",
-        "points":Math.ceil(100/minutes) 
-    }
-    
-    console.log(marker2.id)
-
-    const apiUrl = "https://gfsk-backend.onrender.com/add-points";
-
-    fetch(apiUrl,{
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        mode: 'cors',
-        body: JSON.stringify(jsonData),
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-        //window.location.href = "index.html";
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-})
-
 marker3.addEventListener("markerFound", (e)=>{ 
-    stopStopwatch();
-    successAudio.play();
+    
     const jsonData={
         "userId":localStorage.getItem("userId"),
         "gameId":"DD",
         "points":Math.ceil(100/minutes) 
     }
 
-    const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+    if (currModel==6){
+        successAudio.play();
+        toast.innerHTML="Wow, correct!"
+        toast.className = "show";
+        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    
+        shareMe();
 
-    fetch(apiUrl,{
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        mode: 'cors',
-        body: JSON.stringify(jsonData),
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-        //window.location.href = "index.html";
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+
+        fetch(apiUrl,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
+
 })
+
+
