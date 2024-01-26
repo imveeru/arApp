@@ -107,7 +107,7 @@ marker1.addEventListener("markerFound", (e)=>{
         "points":Math.ceil(100/minutes) 
     }
 
-    if (currModel==1){
+    // if (currModel==1){
         toast.innerHTML="Wow, correct!"
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
@@ -132,11 +132,11 @@ marker1.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    }else{
-        popup.style.visibility="visible";
-        failureAudio.play();
-        capture()
-    }
+    // }else{
+    //     popup.style.visibility="visible";
+    //     failureAudio.play();
+    //     capture()
+    // }
 
 
 })
@@ -149,7 +149,6 @@ marker3.addEventListener("markerFound", (e)=>{
         "points":Math.ceil(100/minutes) 
     }
 
-    if (currModel==3){
         successAudio.play();
         toast.innerHTML="Wow, correct!"
         toast.className = "show";
@@ -175,11 +174,11 @@ marker3.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    }else{
-        popup.style.visibility="visible";
-        failureAudio.play();
-        capture()
-    }
+    // }else{
+    //     popup.style.visibility="visible";
+    //     failureAudio.play();
+    //     capture()
+    // }
 
 })
 
