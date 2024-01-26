@@ -9,6 +9,8 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
         <script src="1b-html2canvas.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
         <style>
             .buttons {
               position: absolute;
@@ -113,7 +115,8 @@
             }
 
             .popup{
-                background: white;
+                background-image: url('ui_assets/Badge\ Background\ Slot.svg');
+                background-repeat: no-repeat;
                 width: 80vw;
                 height: 60vh;
                 margin-left: auto;
@@ -131,6 +134,12 @@
             .popup>img{
                 width: 70%;
                 opacity: 60%;
+                mix-blend-mode: multiply;
+            }
+            
+            .popup>p{
+                color: white;
+                font-family: 'Changa One', sans-serif;
             }
 
             .popupBtns{
@@ -140,18 +149,25 @@
 
             .popupBtn1{
                 padding: 1.5rem;
-                background: #1D40AF;
-                border-radius: 1rem;
+                /* background: #1D40AF; */
+                background-image: url('ui_assets/Button-2.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                display: flex;
+                align-content: center;
                 color: white;
             }
 
             .popupBtn2{
                 padding: 1.5rem;
-                border-style:solid;
-                border-width: 2px;
-                border-color: #1D40AF;
-                border-radius: 1rem;
-                color: #1D40AF;
+                background-image: url('ui_assets/Button-2.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                display: flex;
+                align-content: center;
+                color: white;
             }
 
             a{
@@ -174,7 +190,7 @@
             <div id="snackbar"></div>
         </div>
 
-        <div id="popupContainer" style="visibility: hidden;" class="absolute z-50 bg-black min-h-[100dvh] min-w-[100dvw]">
+        <div id="popupContainer" style="visibility: visible;" class="absolute z-50 bg-black min-h-[100dvh] min-w-[100dvw]">
             <div class="popup">
                 <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/9afd3b92ab41ffca7f368a8fcbd6d39a75894efe0edbc14cf1f067cf625e6678.png"/>
                 <p>boohoo!</p>

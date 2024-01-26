@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 135.9 206.77">
+  <defs>
+    <filter id="luminosity-noclip" x="0" y="0" width="135.9" height="206.77" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="SourceGraphic" in2="bg"/>
+    </filter>
+    <filter id="luminosity-noclip-2" x="0" y="-8637.51" width="135.9" height="32766" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="SourceGraphic" in2="bg"/>
+    </filter>
+    <mask id="mask-1" x="0" y="-8637.51" width="135.9" height="32766" maskUnits="userSpaceOnUse"/>
+    <radialGradient id="_Áåçûìÿííûé_ãðàäèåíò_1314" data-name="Áåçûìÿííûé ãðàäèåíò 1314" cx="74.34" cy="80.3" fx="74.34" fy="80.3" r="167.61" gradientTransform="translate(-.48 5.25) scale(.97)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#666"/>
+      <stop offset=".13" stop-color="#717171"/>
+      <stop offset=".36" stop-color="#909090"/>
+      <stop offset=".67" stop-color="#c2c2c2"/>
+      <stop offset="1" stop-color="#fff"/>
+    </radialGradient>
+    <mask id="mask" x="0" y="0" width="135.9" height="206.77" maskUnits="userSpaceOnUse">
+      <g style="filter: url(#luminosity-noclip);">
+        <g style="mask: url(#mask-1);">
+          <path d="m127.08,202.15c-38.79,6.17-79.46,6.17-118.25,0-1.24-.21-2.15-1.23-2.31-2.62C-.13,141.18-1.36,76.41,1.33,9.54c.08-1.78,1.01-3.13,2.33-3.4C46.17-2.05,89.74-2.05,132.25,6.14c1.32.27,2.25,1.62,2.33,3.4,2.68,66.87,1.46,131.64-5.19,189.99-.16,1.39-1.08,2.42-2.31,2.62Z" style="fill: url(#_Áåçûìÿííûé_ãðàäèåíò_1314); mix-blend-mode: multiply; stroke-width: 0px;"/>
+        </g>
+      </g>
+    </mask>
+    <radialGradient id="_Áåçûìÿííûé_ãðàäèåíò_935" data-name="Áåçûìÿííûé ãðàäèåíò 935" cx="73.5" cy="65.36" fx="73.5" fy="65.36" r="94.6" gradientTransform="translate(-.48 5.25) scale(.97)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#002dff"/>
+      <stop offset=".13" stop-color="#0138ff"/>
+      <stop offset=".36" stop-color="#0457ff"/>
+      <stop offset=".67" stop-color="#0a89ff"/>
+      <stop offset="1" stop-color="#12c8ff"/>
+    </radialGradient>
+    <radialGradient id="_Áåçûìÿííûé_ãðàäèåíò_35" data-name="Áåçûìÿííûé ãðàäèåíò 35" cx="75.2" cy="47.84" fx="75.2" fy="47.84" r="93.7" gradientTransform="translate(-23.24 71.65) scale(1.27 1.44)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#004dcd"/>
+      <stop offset=".31" stop-color="#0458cd"/>
+      <stop offset=".85" stop-color="#1077d0"/>
+      <stop offset="1" stop-color="#1481d1"/>
+    </radialGradient>
+    <radialGradient id="_Áåçûìÿííûé_ãðàäèåíò_35-2" data-name="Áåçûìÿííûé ãðàäèåíò 35" cx="74.95" cy="48.07" fx="74.95" fy="48.07" r="93.67" gradientTransform="translate(-19.16 72.25) scale(1.22 1.4)" xlink:href="#_Áåçûìÿííûé_ãðàäèåíò_35"/>
+    <radialGradient id="_Áåçûìÿííûé_ãðàäèåíò_33" data-name="Áåçûìÿííûé ãðàäèåíò 33" cx="75.36" cy="44.35" fx="75.36" fy="44.35" r="105.86" gradientTransform="translate(-.48 110.08) scale(.97 1.26)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#004dcd"/>
+      <stop offset="1" stop-color="#1481d1"/>
+    </radialGradient>
+    <radialGradient id="_Áåçûìÿííûé_ãðàäèåíò_33-2" data-name="Áåçûìÿííûé ãðàäèåíò 33" cx="75.34" cy="-89.06" fx="75.34" fy="-89.06" r="111.96" gradientTransform="translate(-.48 116.78) scale(.97 1.23)" xlink:href="#_Áåçûìÿííûé_ãðàäèåíò_33"/>
+  </defs>
+  <g style="isolation: isolate;">
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Layer_1-2" data-name="Layer 1">
+        <g>
+          <g style="mask: url(#mask);">
+            <path d="m127.08,202.15c-38.79,6.17-79.46,6.17-118.25,0-1.24-.21-2.15-1.23-2.31-2.62C-.13,141.18-1.36,76.41,1.33,9.54c.08-1.78,1.01-3.13,2.33-3.4C46.17-2.05,89.74-2.05,132.25,6.14c1.32.27,2.25,1.62,2.33,3.4,2.68,66.87,1.46,131.64-5.19,189.99-.16,1.39-1.08,2.42-2.31,2.62Z" style="fill: url(#_Áåçûìÿííûé_ãðàäèåíò_935); opacity: .51; stroke-width: 0px;"/>
+          </g>
+          <g style="mix-blend-mode: multiply; opacity: .8;">
+            <path d="m122.73,174.02c-35.92,5.16-73.64,5.16-109.56,0-1.14-.17-1.98-1.03-2.12-2.19-5.59-48.27-6.08-100.84-3.04-154.05.09-1.4.94-2.47,2.12-2.67,38.25-6.44,77.37-6.44,115.62,0,1.19.21,2.04,1.27,2.12,2.67,3.05,53.21,2.55,105.78-3.04,154.05-.14,1.16-.98,2.02-2.12,2.19Z" style="fill: url(#_Áåçûìÿííûé_ãðàäèåíò_35); stroke-width: 0px;"/>
+          </g>
+          <g style="mix-blend-mode: multiply; opacity: .8;">
+            <path d="m120.54,172.02c-34.48,5.03-70.7,5.03-105.18,0-1.1-.17-1.9-1-2.03-2.13-5.31-47-5.71-98.07-2.73-149.65.08-1.36.9-2.39,2.04-2.59,36.6-6.23,74.04-6.23,110.64,0,1.14.2,1.95,1.23,2.04,2.59,2.98,51.58,2.58,102.66-2.73,149.65-.13,1.13-.93,1.97-2.03,2.13Z" style="fill: url(#_Áåçûìÿííûé_ãðàäèåíò_35-2); stroke-width: 0px;"/>
+          </g>
+          <path d="m125.67,166.01c-.17,1.36-.64,5.22-.82,6.57-.14,1.02-.98,1.77-2.12,1.92-35.92,4.53-73.64,4.53-109.56,0-1.14-.15-1.98-.9-2.12-1.92-.41-3.09-.79-6.21-1.14-9.34.02.66.79,8.39,1.21,11.58.14,1.01.98,1.77,2.12,1.92,35.88,4.52,73.56,4.52,109.43,0,1.14-.15,1.98-.9,2.12-1.92.18-1.39.87-8.09.89-8.81Z" style="fill: url(#_Áåçûìÿííûé_ãðàäèåíò_33); mix-blend-mode: screen; stroke-width: 0px;"/>
+          <path d="m3.68,8.12s.09.07.14.11c1.31.99,2.98.54,4.36.27,1.61-.32,3.27-.44,4.9-.71,3.9-.64,7.81-1.21,11.73-1.71,7.84-1,15.71-1.73,23.6-2.19,15.78-.91,31.61-.72,47.36.58,6.18.51,12.34,1.16,18.49,1.99,3.07.42,6.14.88,9.19,1.39,2.08.35,6.88,2.57,8.59-.14,1.24-1.96-2.03-2.01-2.9-2.17-1.96-.37-3.92-.72-5.88-1.05-7.87-1.32-15.79-2.31-23.74-3.03-4.69-.42-9.38-.75-14.08-1-15.8-.81-31.63-.52-47.39.87-6.3.56-12.58,1.29-18.84,2.2-3.13.45-6.25.95-9.37,1.49-1.56.27-3.11.55-4.67.84-.92.17-3.13.89-1.48,2.26Z" style="fill: url(#_Áåçûìÿííûé_ãðàäèåíò_33-2); mix-blend-mode: screen; opacity: .59; stroke-width: 0px;"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
