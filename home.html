@@ -94,25 +94,22 @@
                 <p class="font-regular text-2xl font-bold">Home</p>
             </div>
 
-            <div class="flex gap-x-4 items-center mx-auto mt-2 md:mt-4 mb-2">
-                <p class="p-3 bg-orange-500 rounded-full"></p>
-                <p class="text-white font-semibold text-2xl md:text-2xl" id="playerName"></p>
+            <div class="-2 bg-[url('ui_assets/Button-2.svg')] bg-no-repeat bg-cover flex gap-x-4 items-center mx-auto mt-2 md:mt-4 mb-2">
+                <p class="text-white font-semibold text-2xl md:text-2xl px-10 py-2" id="playerName"></p>
             </div>
 
             <div class="flex mx-auto gap-x-2">
-                <div class="flex gap-x-2 bg-[#225faa] p-2 md:p-2 rounded-md">
-                    <p class="p-2 bg-yellow-500 rounded-full"></p>
+                <div class="flex gap-x-2 bg-[url('ui_assets/Button-2.svg')] bg-no-repeat bg-cover px-10 py-2 md:p-2 rounded-md">
                     <div>
-                        <p class="text-white text-2xl md:text-lg">Badges</p>
-                        <p class="text-white/50 text-lg md:text-lg">Coming Soon</p>
+                        <p class="text-white text-xl md:text-lg">Badges</p>
+                        <p class="text-white/50 text-md md:text-lg">Coming Soon</p>
                     </div>
                 </div>
 
-                <div class="flex gap-x-2 bg-[#225faa] p-2 md:p-2 rounded-md">
-                    <p class="p-2 bg-green-500 rounded-full"></p>
+                <div class="bg-[url('ui_assets/Button-2.svg')] bg-no-repeat bg-cover flex gap-x-2 px-10 py-2 md:p-2 rounded-md">
                     <div>
-                        <p class="text-white text-2xl md:text-lg" >Inventory</p>
-                        <p class="text-white/50 text-lg md:text-lg" id="playerScore"></p>
+                        <p class="text-white text-xl md:text-lg" >Inventory</p>
+                        <p class="text-white/50 text-md md:text-lg" id="playerScore"></p>
                     </div>
                 </div>
             </div>
@@ -121,31 +118,46 @@
         <!-- Buttons -->
         <div class="grid grid-cols-2 md:grid-cols-2 grid-rows-3 md:grid-rows-3 m-3 md:m-6 gap-4 row-span-8 text-3xl md:text-3xl px-2">
 
-          <a class="bg-[url('ui_assets/home/GeniusTrail.svg')] bg-no-repeat bg-cover text-white font-semibold flex justify-center items-center cursor-pointer"
+          <!-- <a class="bg-[url('ui_assets/home/GeniusTrail.svg')] w-[140px] bg-no-repeat bg-cover text-white font-semibold flex justify-center items-center cursor-pointer"
           href="hint_gt.html">
-            <!-- <a class="text-center" href="hint_gt.html"></a> -->
+            <a class="text-center" href="hint_gt.html"></a>
+          </a> -->
+          <a href="hint_gt.html">
+          <img src="ui_assets/home/GeniusTrail.svg" alt="GT" class="mx-auto my-auto w-[140px]" href="hint_gt.html"/>
           </a>
 
-          <a class="bg-[url('ui_assets/home/DomeisticDiscovery.svg')] bg-no-repeat bg-cover text-white font-semibold flex justify-center items-center cursor-pointer"
-          href="inst_dd.html">
-            <!-- <a class="text-center" href="hint_gt.html">Genius <br/>Trial</a> -->
+          <a href="inst_dd.html">
+          <img src="ui_assets/home/DomeisticDiscovery.svg" alt="DD" class="mx-auto my-auto w-[140px]" href="inst_dd.html"/>
           </a>
+
+          <a >
+          <img src="ui_assets/home/HomeWizZoneCS.svg" alt="HW" class="mx-auto my-auto w-[140px]" />
+          </a>
+
+          <a >
+          <img src="ui_assets/home/ScienceSeekerCS.svg" alt="SS" class="mx-auto my-auto w-[140px]" />
+          </a>
+
+          <!-- <a class="bg-[url('ui_assets/home/DomeisticDiscovery.svg')] bg-no-repeat bg-cover text-white font-semibold flex justify-center items-center cursor-pointer"
+          href="inst_dd.html">
+            <a class="text-center" href="hint_gt.html">Genius <br/>Trial</a>
+          </a> -->
 
           <!-- <div class="bg-[url('ui_assets/button.png')] bg-no-repeat bg-cover text-white font-semibold flex justify-center items-center cursor-pointer">
             <a class="text-center" href="inst_dd.html">Domestic Discovery</a>
           </div> -->
           
-          <a class="bg-[url('ui_assets/home/HomeWizZoneCS.svg')] bg-no-repeat bg-cover text-white font-semibold flex flex-col justify-center items-center cursor-pointer">
+          <!-- <a class="bg-[url('ui_assets/home/HomeWizZoneCS.svg')] bg-no-repeat bg-cover text-white font-semibold flex flex-col justify-center items-center cursor-pointer">
 
-          </a>
+          </a> -->
           <!-- <div class="bg-[url('ui_assets/button.png')] bg-no-repeat bg-cover text-white font-semibold flex flex-col justify-center items-center cursor-pointer">
             <a class="text-center ">Science Seeker</a>
             <p class="text-sm font-thin">Coming Soon</p>
           </div> -->
 
-          <a class="bg-[url('ui_assets/home/ScienceSeekerCS.svg')] bg-no-repeat bg-cover text-white font-semibold flex flex-col justify-center items-center cursor-pointer">
+          <!-- <a class="bg-[url('ui_assets/home/ScienceSeekerCS.svg')] bg-no-repeat bg-cover text-white font-semibold flex flex-col justify-center items-center cursor-pointer">
 
-          </a>
+          </a> -->
 
 
           <!-- <div class="bg-[url('ui_assets/button.png')] bg-no-repeat bg-cover text-white font-semibold flex flex-col justify-center items-center cursor-pointer ">
