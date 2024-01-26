@@ -9,6 +9,9 @@ console.log(test.children[0].attr)
 let currModel=localStorage.getItem("modelId")
 console.log(currModel);
 
+let successAudio=new Audio('audio/success.mp3')
+let failureAudio=new Audio('audio/failure.mp3')
+
 let timerInterval;
 let totalSeconds = 0;
 let minutes;
@@ -91,16 +94,13 @@ function shareMe(){
     
 }
 
-function capture () {
-    
-  }
-
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 
 marker1.addEventListener("markerFound", (e)=>{ 
     stopStopwatch();
+    successAudio.play();
     const jsonData={
         "userId":localStorage.getItem("userId"),
         "gameId":"DD",
@@ -134,6 +134,7 @@ marker1.addEventListener("markerFound", (e)=>{
         });
     }else{
         popup.style.visibility="visible";
+        failureAudio.play();
         capture()
     }
 
@@ -142,6 +143,7 @@ marker1.addEventListener("markerFound", (e)=>{
 
 marker2.addEventListener("markerFound", (e)=>{ 
     stopStopwatch();
+    successAudio.play();
     const jsonData={
         "userId":localStorage.getItem("userId"),
         "gameId":"DD",
@@ -172,6 +174,7 @@ marker2.addEventListener("markerFound", (e)=>{
 
 marker3.addEventListener("markerFound", (e)=>{ 
     stopStopwatch();
+    successAudio.play();
     const jsonData={
         "userId":localStorage.getItem("userId"),
         "gameId":"DD",

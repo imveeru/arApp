@@ -6,6 +6,8 @@ let marker5=document.getElementById('ar-marker-5')
 let marker6=document.getElementById('ar-marker-6')
 let marker7=document.getElementById('ar-marker-7')
 
+let successAudio=new Audio('audio/success.ogg')
+
 let timerInterval;
 let totalSeconds = 0;
 let minutes;
@@ -49,9 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 marker1.addEventListener("markerFound", (e)=>{ 
     stopStopwatch();
+    successAudio.play();
     const jsonData={
         "userId":localStorage.getItem("userId"),
-        "invId":"G",
+        "invId":"A",
     }
 
     const apiUrl = "https://gfsk-backend.onrender.com/add-inv";
@@ -76,6 +79,7 @@ marker1.addEventListener("markerFound", (e)=>{
 
 marker2.addEventListener("markerFound", (e)=>{ 
     stopStopwatch();
+    successAudio.play();
     const jsonData={
         "userId":localStorage.getItem("userId"),
         "invId":"B",
@@ -103,6 +107,7 @@ marker2.addEventListener("markerFound", (e)=>{
 
 marker3.addEventListener("markerFound", (e)=>{ 
     stopStopwatch();
+    successAudio.play();
     const jsonData={
         "userId":localStorage.getItem("userId"),
         "invId":"C",
@@ -130,6 +135,7 @@ marker3.addEventListener("markerFound", (e)=>{
 
 marker4.addEventListener("markerFound", (e)=>{ 
     stopStopwatch();
+    successAudio.play();
     const jsonData={
         "userId":localStorage.getItem("userId"),
         "invId":"D",
@@ -157,6 +163,7 @@ marker4.addEventListener("markerFound", (e)=>{
 
 marker5.addEventListener("markerFound", (e)=>{ 
     stopStopwatch();
+    successAudio.play();
     const jsonData={
         "userId":localStorage.getItem("userId"),
         "invId":"E",
@@ -184,6 +191,7 @@ marker5.addEventListener("markerFound", (e)=>{
 
 marker6.addEventListener("markerFound", (e)=>{ 
     stopStopwatch();
+    successAudio.play();
     const jsonData={
         "userId":localStorage.getItem("userId"),
         "invId":"F",
@@ -211,6 +219,7 @@ marker6.addEventListener("markerFound", (e)=>{
 
 marker7.addEventListener("markerFound", (e)=>{ 
     stopStopwatch();
+    successAudio.play();
     const jsonData={
         "userId":localStorage.getItem("userId"),
         "invId":"G",
