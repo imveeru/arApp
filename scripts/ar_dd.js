@@ -1,9 +1,16 @@
 let marker1=document.getElementById('animated-marker')
 let marker2=document.getElementById('animated-marker2')
-let marker3=document.getElementById('animated-marker3')
+let marker4=document.getElementById('animated-marker4')
+let marker5=document.getElementById('animated-marker5')
+let marker6=document.getElementById('animated-marker6')
+let marker9=document.getElementById('animated-marker9')
+let marker10=document.getElementById('animated-marker10')
+let marker11=document.getElementById('animated-marker11')
+let marker12=document.getElementById('animated-marker12')
+
 let toast = document.getElementById("snackbar");
 
-let test=document.getElementById("animated-marker3")
+let marker3=document.getElementById("animated-marker3")
 console.log("attr",test.children[0].attr)
 
 let currModel=localStorage.getItem("modelId")
@@ -141,46 +148,6 @@ marker1.addEventListener("markerFound", (e)=>{
 
 })
 
-marker3.addEventListener("markerFound", (e)=>{ 
-    
-    const jsonData={
-        "userId":localStorage.getItem("userId"),
-        "gameId":"DD",
-        "points":Math.ceil(100/minutes) 
-    }
 
-    if (currModel==3){
-        successAudio.play();
-        toast.innerHTML="Wow, correct!"
-        toast.className = "show";
-        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
-    
-        shareMe();
-
-        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
-
-        fetch(apiUrl,{
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            mode: 'cors',
-            body: JSON.stringify(jsonData),
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            //window.location.href = "index.html";
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-    }else{
-        popup.style.visibility="visible";
-        failureAudio.play();
-        capture()
-    }
-
-})
 
 

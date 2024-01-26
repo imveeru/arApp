@@ -10,8 +10,8 @@ let marker10=document.getElementById('animated-marker10')
 
 let toast = document.getElementById("snackbar");
 
-let test=document.getElementById("animated-marker3")
-console.log("attr",test.children[0].attr)
+let marker3=document.getElementById("animated-marker3")
+console.log("attr",marker3.children[0].attr)
 
 let currModel=localStorage.getItem("modelId")
 console.log(currModel);
