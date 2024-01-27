@@ -190,6 +190,9 @@ marker2.addEventListener("markerFound", (e)=>{
 })
 
 marker3.addEventListener("markerFound", (e)=>{ 
+    successAudio.play();
+    let vid=document.getElementById("pressure-cooker")
+    vid.play();
     
     const jsonData={
         "userId":localStorage.getItem("userId"),
@@ -197,11 +200,7 @@ marker3.addEventListener("markerFound", (e)=>{
         "points":Math.ceil(100/minutes) 
     }
 
-        successAudio.play();
-        toast.innerHTML="Wow, correct!"
-        toast.className = "show";
-        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
-    
+        
         shareMe();
 
         const apiUrl = "https://gfsk-backend.onrender.com/add-points";
@@ -228,6 +227,11 @@ marker3.addEventListener("markerFound", (e)=>{
     //     capture()
     // }
 
+})
+
+marker3.addEventListener("markerLost",(e)=>{
+    let vid=document.getElementById("pressure-cooker")
+    vid.pause();
 })
 
 marker4.addEventListener("markerFound", (e)=>{ 
