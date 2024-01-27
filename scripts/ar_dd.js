@@ -160,15 +160,18 @@ marker1.addEventListener("markerLost",(e)=>{
     mosquitoAudio.pause()
 });
 
-marker2.addEventListener("markerFound", (e)=>{ 
-    
+marker1.addEventListener("markerFound", (e)=>{ 
+    stopStopwatch();
+    successAudio.play();
+    mosquitoAudio.play();
+
     const jsonData={
         "userId":localStorage.getItem("userId"),
         "gameId":"DD",
         "points":Math.ceil(100/minutes) 
     }
 
-        successAudio.play();
+    if (currModel==1){
         toast.innerHTML="Wow, correct!"
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
@@ -193,18 +196,20 @@ marker2.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
+
 
 })
 
-marker3.addEventListener("markerFound", (e)=>{ 
-    successAudio.play();
-    let vid=document.getElementById("pressure-cooker")
-    vid.play();
+marker1.addEventListener("markerLost",(e)=>{
+    mosquitoAudio.pause()
+});
+
+marker2.addEventListener("markerFound", (e)=>{ 
     
     const jsonData={
         "userId":localStorage.getItem("userId"),
@@ -212,51 +217,7 @@ marker3.addEventListener("markerFound", (e)=>{
         "points":Math.ceil(100/minutes) 
     }
 
-        
-        shareMe();
-
-        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
-
-        fetch(apiUrl,{
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            mode: 'cors',
-            body: JSON.stringify(jsonData),
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            //window.location.href = "index.html";
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
-
-})
-
-marker4.addEventListener("markerLost",(e)=>{
-    let vid=document.getElementById("pressure-cooker")
-    vid.pause();
-})
-
-marker4.addEventListener("markerFound", (e)=>{ 
-    
-    const jsonData={
-        "userId":localStorage.getItem("userId"),
-        "gameId":"DD",
-        "points":Math.ceil(100/minutes) 
-    }
-
-    if (currModel==4){
-        let vid=document.getElementById("pressure-cooker")
-        vid.play();
+    if (currModel==2){
         successAudio.play();
         toast.innerHTML="Wow, correct!"
         toast.className = "show";
@@ -290,7 +251,14 @@ marker4.addEventListener("markerFound", (e)=>{
 
 })
 
-marker5.addEventListener("markerFound", (e)=>{ 
+marker4.addEventListener("markerLost",(e)=>{
+    let vid=document.getElementById("pressure-cooker")
+    vid.pause();
+})
+
+marker4.addEventListener("markerFound", (e)=>{ 
+
+    
     
     const jsonData={
         "userId":localStorage.getItem("userId"),
@@ -298,7 +266,10 @@ marker5.addEventListener("markerFound", (e)=>{
         "points":Math.ceil(100/minutes) 
     }
 
+    if (currModel==4){
         successAudio.play();
+        let vid=document.getElementById("pressure-cooker")
+        vid.play();
         toast.innerHTML="Wow, correct!"
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
@@ -323,15 +294,67 @@ marker5.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
+})
+
+marker5.addEventListener("markerFound", (e)=>{ 
+
+    
+    
+    const jsonData={
+        "userId":localStorage.getItem("userId"),
+        "gameId":"DD",
+        "points":Math.ceil(100/minutes) 
+    }
+    if (currModel==5){
+        successAudio.play();
+        let vid=document.getElementById("flask")
+    vid.play();
+        toast.innerHTML="Wow, correct!"
+        toast.className = "show";
+        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    
+        shareMe();
+
+        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+
+        fetch(apiUrl,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
+
+})
+
+marker5.addEventListener("markerLost",(e)=>{
+    let vid=document.getElementById("flask")
+    vid.pause();
 })
 
 marker7.addEventListener("markerFound", (e)=>{ 
+
+    
     
     const jsonData={
         "userId":localStorage.getItem("userId"),
@@ -339,6 +362,9 @@ marker7.addEventListener("markerFound", (e)=>{
         "points":Math.ceil(100/minutes) 
     }
 
+    if (currModel==7){
+    let vid=document.getElementById("fan")
+    vid.play();
         successAudio.play();
         toast.innerHTML="Wow, correct!"
         toast.className = "show";
@@ -364,16 +390,21 @@ marker7.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
 })
 
-marker8.addEventListener("markerFound", (e)=>{ 
+marker7.addEventListener("markerLost",(e)=>{
+    let vid=document.getElementById("fan")
+    vid.pause();
+})
 
+marker8.addEventListener("markerFound", (e)=>{ 
+if(currModel==8){
     let vid=document.getElementById("flushtank")
     vid.play();
     
@@ -408,11 +439,11 @@ marker8.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
 })
 
@@ -463,8 +494,10 @@ marker9.addEventListener("markerFound", (e)=>{
 })
 
 marker10.addEventListener("markerFound", (e)=>{ 
+
+    if(currModel==10){
     successAudio.play();
-    let vid=document.getElementById("detergent")
+    let vid=document.getElementById("tap")
     vid.play();
     
     const jsonData={
@@ -474,11 +507,11 @@ marker10.addEventListener("markerFound", (e)=>{
     }
 
         
-        // toast.innerHTML="Wow, correct!"
-        // toast.className = "show";
-        // setTimeou    t(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        toast.innerHTML="Wow, correct!"
+        toast.className = "show";
+        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
     
-        // shareMe();
+        shareMe();
 
         const apiUrl = "https://gfsk-backend.onrender.com/add-points";
 
@@ -498,21 +531,25 @@ marker10.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
 })
 
 marker10.addEventListener("markerLost",(e)=>{
-    let vid=document.getElementById("detergent");
+    let vid=document.getElementById("tap");
     vid.pause();
 })
 
 marker11.addEventListener("markerFound", (e)=>{ 
     
+    if(currModel==11){
+    let vid=document.getElementById("detergent")
+    vid.play();
+
     const jsonData={
         "userId":localStorage.getItem("userId"),
         "gameId":"DD",
@@ -544,15 +581,24 @@ marker11.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
+})
+
+marker11.addEventListener("markerLost",(e)=>{
+    let vid=document.getElementById("detergent")
+    vid.pause();
 })
 
 marker23.addEventListener("markerFound", (e)=>{ 
+
+    if(currModel==23){
+    let vid=document.getElementById("lock")
+    vid.play();
     
     const jsonData={
         "userId":localStorage.getItem("userId"),
@@ -585,15 +631,24 @@ marker23.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
+})
+
+marker23.addEventListener("markerLost",(e)=>{
+    let vid=document.getElementById("lock")
+    vid.pause();
 })
 
 marker32.addEventListener("markerFound", (e)=>{ 
+
+    if(currModel==32){
+    let vid=document.getElementById("knife")
+    vid.play();
     
     const jsonData={
         "userId":localStorage.getItem("userId"),
@@ -626,15 +681,24 @@ marker32.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
+})
+
+marker32.addEventListener("markerLost",(e)=>{
+    let vid=document.getElementById("knife")
+    vid.pause();
 })
 
 marker34.addEventListener("markerFound", (e)=>{ 
+
+    if(currModel==34){
+    let vid=document.getElementById("flowering-plant")
+    vid.play();
     
     const jsonData={
         "userId":localStorage.getItem("userId"),
@@ -667,14 +731,18 @@ marker34.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
 })
 
+marker34.addEventListener("markerLost",(e) => {
+    let vid=document.getElementById("flowering-plant")
+    vid.pause();
+});
 
 
 
