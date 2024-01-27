@@ -199,7 +199,13 @@ marker2.addEventListener("markerFound", (e)=>{
 
 })
 
-marker3.addEventListener("markerFound", (e)=>{ 
+marker4.addEventListener("markerLost",(e)=>{
+    let vid=document.getElementById("pressure-cooker")
+    vid.pause();
+})
+
+marker4.addEventListener("markerFound", (e)=>{ 
+
     successAudio.play();
     let vid=document.getElementById("pressure-cooker")
     vid.play();
@@ -211,48 +217,6 @@ marker3.addEventListener("markerFound", (e)=>{
     }
 
         
-        shareMe();
-
-        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
-
-        fetch(apiUrl,{
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            mode: 'cors',
-            body: JSON.stringify(jsonData),
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            //window.location.href = "index.html";
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
-
-})
-
-marker3.addEventListener("markerLost",(e)=>{
-    let vid=document.getElementById("pressure-cooker")
-    vid.pause();
-})
-
-marker4.addEventListener("markerFound", (e)=>{ 
-    
-    const jsonData={
-        "userId":localStorage.getItem("userId"),
-        "gameId":"DD",
-        "points":Math.ceil(100/minutes) 
-    }
-
-        successAudio.play();
         toast.innerHTML="Wow, correct!"
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
@@ -286,6 +250,9 @@ marker4.addEventListener("markerFound", (e)=>{
 })
 
 marker5.addEventListener("markerFound", (e)=>{ 
+
+    let vid=document.getElementById("flask")
+    vid.play();
     
     const jsonData={
         "userId":localStorage.getItem("userId"),
@@ -326,7 +293,15 @@ marker5.addEventListener("markerFound", (e)=>{
 
 })
 
+marker5.addEventListener("markerLost",(e)=>{
+    let vid=document.getElementById("flask")
+    vid.pause();
+})
+
 marker7.addEventListener("markerFound", (e)=>{ 
+
+    let vid=document.getElementById("fan")
+    vid.play();
     
     const jsonData={
         "userId":localStorage.getItem("userId"),
@@ -365,6 +340,11 @@ marker7.addEventListener("markerFound", (e)=>{
     //     capture()
     // }
 
+})
+
+marker7.addEventListener("markerLost",(e)=>{
+    let vid=document.getElementById("fan")
+    vid.pause();
 })
 
 marker8.addEventListener("markerFound", (e)=>{ 
@@ -459,7 +439,7 @@ marker9.addEventListener("markerFound", (e)=>{
 
 marker10.addEventListener("markerFound", (e)=>{ 
     successAudio.play();
-    let vid=document.getElementById("detergent")
+    let vid=document.getElementById("tap")
     vid.play();
     
     const jsonData={
@@ -502,12 +482,15 @@ marker10.addEventListener("markerFound", (e)=>{
 })
 
 marker10.addEventListener("markerLost",(e)=>{
-    let vid=document.getElementById("detergent");
+    let vid=document.getElementById("tap");
     vid.pause();
 })
 
 marker11.addEventListener("markerFound", (e)=>{ 
     
+    let vid=document.getElementById("detergent")
+    vid.play();
+
     const jsonData={
         "userId":localStorage.getItem("userId"),
         "gameId":"DD",
@@ -545,9 +528,17 @@ marker11.addEventListener("markerFound", (e)=>{
     //     capture()
     // }
 
+})
+
+marker11.addEventListener("markerLost",(e)=>{
+    let vid=document.getElementById("detergent")
+    vid.pause();
 })
 
 marker23.addEventListener("markerFound", (e)=>{ 
+
+    let vid=document.getElementById("lock")
+    vid.play();
     
     const jsonData={
         "userId":localStorage.getItem("userId"),
@@ -586,9 +577,17 @@ marker23.addEventListener("markerFound", (e)=>{
     //     capture()
     // }
 
+})
+
+marker23.addEventListener("markerLost",(e)=>{
+    let vid=document.getElementById("lock")
+    vid.pause();
 })
 
 marker32.addEventListener("markerFound", (e)=>{ 
+
+    let vid=document.getElementById("knife")
+    vid.play();
     
     const jsonData={
         "userId":localStorage.getItem("userId"),
@@ -627,9 +626,17 @@ marker32.addEventListener("markerFound", (e)=>{
     //     capture()
     // }
 
+})
+
+marker32.addEventListener("markerLost",(e)=>{
+    let vid=document.getElementById("knife")
+    vid.pause();
 })
 
 marker34.addEventListener("markerFound", (e)=>{ 
+
+    let vid=document.getElementById("flowering-plant")
+    vid.play();
     
     const jsonData={
         "userId":localStorage.getItem("userId"),
@@ -669,3 +676,8 @@ marker34.addEventListener("markerFound", (e)=>{
     // }
 
 })
+
+marker34.addEventListener("markerLost",(e) => {
+    let vid=document.getElementById("flowering-plant")
+    vid.pause();
+});

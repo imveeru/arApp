@@ -241,7 +241,7 @@ marker3.addEventListener("markerFound", (e)=>{
 
 })
 
-marker3.addEventListener("markerLost",(e)=>{
+marker4.addEventListener("markerLost",(e)=>{
     let vid=document.getElementById("pressure-cooker")
     vid.pause();
 })
@@ -254,6 +254,9 @@ marker4.addEventListener("markerFound", (e)=>{
         "points":Math.ceil(100/minutes) 
     }
 
+    if (currModel==4){
+        let vid=document.getElementById("pressure-cooker")
+        vid.play();
         successAudio.play();
         toast.innerHTML="Wow, correct!"
         toast.className = "show";
@@ -279,11 +282,11 @@ marker4.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
 })
 
