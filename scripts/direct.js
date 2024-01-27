@@ -3,6 +3,7 @@ let marker2=document.getElementById('animated-marker2')
 let marker4=document.getElementById('animated-marker4')
 let marker5=document.getElementById('animated-marker5')
 let marker12=document.getElementById('animated-marker12')
+let marker8=document.getElementById('animated-marker8')
 let marker9=document.getElementById('animated-marker9')
 let marker6=document.getElementById('animated-marker6')
 let marker11=document.getElementById('animated-marker11')
@@ -104,13 +105,13 @@ function shareMe(){
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
+let mosquitoAudio=new Audio("audio/MosquitoBat.mp3");
 
 marker1.addEventListener("markerFound", (e)=>{ 
     stopStopwatch();
     successAudio.play();
-    let expAudio=new Audio("audio/MosquitoBat.mp3");
-    expAudio.play();
-    
+    mosquitoAudio.play();
+
     const jsonData={
         "userId":localStorage.getItem("userId"),
         "gameId":"DD",
@@ -150,6 +151,10 @@ marker1.addEventListener("markerFound", (e)=>{
 
 
 })
+
+marker1.addEventListener("markerLost",(e)=>{
+    mosquitoAudio.pause()
+});
 
 marker2.addEventListener("markerFound", (e)=>{ 
     
@@ -358,6 +363,55 @@ marker6.addEventListener("markerFound", (e)=>{
     //     capture()
     // }
 
+})
+
+marker8.addEventListener("markerFound", (e)=>{ 
+
+    let vid=document.getElementById("flushtank")
+    vid.play();
+    
+    const jsonData={
+        "userId":localStorage.getItem("userId"),
+        "gameId":"DD",
+        "points":Math.ceil(100/minutes) 
+    }
+
+        successAudio.play();
+        toast.innerHTML="Wow, correct!"
+        toast.className = "show";
+        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    
+        shareMe();
+
+        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+
+        fetch(apiUrl,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    // }else{
+    //     popup.style.visibility="visible";
+    //     failureAudio.play();
+    //     capture()
+    // }
+
+})
+
+marker8.addEventListener("markerLost",(e)=>{
+    let vid=document.getElementById("flushtank")
+    vid.pause();
 })
 
 marker9.addEventListener("markerFound", (e)=>{ 

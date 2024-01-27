@@ -144,6 +144,8 @@
 
                 <video id="detergent" loop="false" src="https://gsfkar.s3.ap-south-1.amazonaws.com/Detergent.mp4" preload="none"></video>
 
+                <video id="flushtank" loop="false" src="videos/Flush Tank.mp4" preload="none"></video>
+
                 <!-- <video id="detergent" loop="false" src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" preload="none"></video> -->
 
                 
@@ -185,6 +187,23 @@
             >
 
                 <a-video id="flowering-plant" rotation="90 0 180" src="#flowering-plant" height="1" width="1.78" position="0 0 0" autoplay="false">
+                </a-video>
+            </a-marker>
+
+            <!-- flush tank -->
+            <a-marker
+                id="animated-marker8"
+                type="pattern"
+                preset="custom"
+                url="markers/m8.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerB"
+                
+            >
+
+                <a-video id="flushtank" rotation="90 0 180" src="#flushtank" height="1" width="1.78" position="0 0 0" autoplay="false">
                 </a-video>
             </a-marker>
 
