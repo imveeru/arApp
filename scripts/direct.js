@@ -35,7 +35,7 @@ function updateStopwatch() {
     const seconds = totalSeconds % 60;
 
     const formattedTime = `${formatTimeComponent(hours)}:${formatTimeComponent(minutes)}:${formatTimeComponent(seconds)}`;
-    document.getElementById('timer').textContent = formattedTime;
+    // document.getElementById('timer').textContent = formattedTime;
 }
 
 function stopStopwatch() {
@@ -271,46 +271,46 @@ marker4.addEventListener("markerFound", (e)=>{
 
 })
 
-marker5.addEventListener("markerFound", (e)=>{ 
+// marker5.addEventListener("markerFound", (e)=>{ 
     
-    const jsonData={
-        "userId":localStorage.getItem("userId"),
-        "gameId":"DD",
-        "points":Math.ceil(100/minutes) 
-    }
+//     const jsonData={
+//         "userId":localStorage.getItem("userId"),
+//         "gameId":"DD",
+//         "points":Math.ceil(100/minutes) 
+//     }
 
-        successAudio.play();
-        toast.innerHTML="Wow, correct!"
-        toast.className = "show";
-        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+//         successAudio.play();
+//         toast.innerHTML="Wow, correct!"
+//         toast.className = "show";
+//         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
     
-        shareMe();
+//         shareMe();
 
-        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+//         const apiUrl = "https://gfsk-backend.onrender.com/add-points";
 
-        fetch(apiUrl,{
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            mode: 'cors',
-            body: JSON.stringify(jsonData),
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            //window.location.href = "index.html";
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+//         fetch(apiUrl,{
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             mode: 'cors',
+//             body: JSON.stringify(jsonData),
+//         })
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log('Success:', data);
+//             //window.location.href = "index.html";
+//         })
+//         .catch(error => {
+//             console.error('Error:', error);
+//         });
+//     // }else{
+//     //     popup.style.visibility="visible";
+//     //     failureAudio.play();
+//     //     capture()
+//     // }
 
-})
+// })
 
 marker6.addEventListener("markerFound", (e)=>{ 
     
@@ -395,6 +395,7 @@ marker9.addEventListener("markerFound", (e)=>{
 })
 
 marker10.addEventListener("markerFound", (e)=>{ 
+    successAudio.play();
     let vid=document.getElementById("detergent")
     vid.play();
     
@@ -404,7 +405,7 @@ marker10.addEventListener("markerFound", (e)=>{
         "points":Math.ceil(100/minutes) 
     }
 
-        successAudio.play();
+        
         toast.innerHTML="Wow, correct!"
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
