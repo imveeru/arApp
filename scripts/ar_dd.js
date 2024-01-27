@@ -2,11 +2,12 @@ let marker1=document.getElementById('animated-marker')
 let marker2=document.getElementById('animated-marker2')
 let marker4=document.getElementById('animated-marker4')
 let marker5=document.getElementById('animated-marker5')
-let marker6=document.getElementById('animated-marker6')
-let marker9=document.getElementById('animated-marker9')
-let marker10=document.getElementById('animated-marker10')
-let marker11=document.getElementById('animated-marker11')
 let marker12=document.getElementById('animated-marker12')
+let marker8=document.getElementById('animated-marker8')
+let marker9=document.getElementById('animated-marker9')
+let marker6=document.getElementById('animated-marker6')
+let marker11=document.getElementById('animated-marker11')
+let marker10=document.getElementById('animated-marker10')
 
 let toast = document.getElementById("snackbar");
 

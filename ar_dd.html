@@ -247,30 +247,39 @@
                     src="models/mosquito.glb"
                 ></a-asset-item>
 
-                <video id="waterVideo" loop="true" autoplay="true" src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" preload="auto"></video>
+                <video id="waterVideo" loop="false"  src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" preload="auto"></video>
 
                 <!-- knife -->
-                <video id="knife" loop="true" autoplay="true" src="https://gsfkar.s3.ap-south-1.amazonaws.com/Knife.mp4" preload="auto"></video>
+                <video id="knife" loop="false"  src="videos/Knife-_1.mp4" preload="none"></video>
 
                 <!-- fan -->
-                <video id="fan" loop="true" autoplay="true" src="https://gsfkar.s3.ap-south-1.amazonaws.com/Fan.mp4" preload="auto"></video>
+                <video id="fan" loop="false"  src="https://gsfkar.s3.ap-south-1.amazonaws.com/Fan.mp4" preload="none"></video>
+
+                <!-- flask -->
+                <video id="flask" loop="false"  src="videos/Thermos Flask.mp4" preload="none"></video>
 
                 <!-- pressure-cooker -->
-                <video id="pressure-cooker" loop="true" autoplay="true" src="https://gsfkar.s3.ap-south-1.amazonaws.com/Pressure%20Cooker.mp4" preload="auto"></video>
+                <video id="pressure-cooker" loop="false"  src="videos/Pressure Cooker .mp4" preload="none"></video>
 
                 <!-- flowering-plant -->
-                <video id="flowering-plant" loop="true" autoplay="true" src="https://gsfkar.s3.ap-south-1.amazonaws.com/Flowering%20Plant.mp4" preload="auto"></video>
+                <video id="flowering-plant" loop="false"  src="https://gsfkar.s3.ap-south-1.amazonaws.com/Flowering%20Plant.mp4" preload="none"></video>
 
 
                 <!-- lock -->
-                <video id="lock" loop="true" autoplay="true" src="https://gsfkar.s3.ap-south-1.amazonaws.com/Lock.mp4" preload="auto"></video>
+                <video id="lock" loop="false"  src="videos/Lock-.mp4" preload="none"></video>
 
 
                 <!-- tap -->
-                <video id="tap" loop="true" autoplay="true" src="https://gsfkar.s3.ap-south-1.amazonaws.com/Water%20Tap.mp4" preload="auto"></video>
+                <video id="tap" loop="false" src="https://gsfkar.s3.ap-south-1.amazonaws.com/Water%20Tap.mp4" preload="none"></video>
 
 
-                <video id="detergent" loop="true" autoplay="true" src="https://gsfkar.s3.ap-south-1.amazonaws.com/Detergent.mp4" preload="auto"></video>
+                <video id="detergent" loop="false" src="https://gsfkar.s3.ap-south-1.amazonaws.com/Detergent.mp4" preload="none"></video>
+
+                <video id="flushtank" loop="false" src="videos/Flush Tank.mp4" preload="none"></video>
+
+                <!-- <video id="detergent" loop="false" src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" preload="none"></video> -->
+
+                
 
             </a-assets>
 
@@ -287,9 +296,9 @@
             >
                 <a-entity
                     id="bowser-model"
-                    scale="0.9999999845074605 0.9999999845074605 0.9999999845074605"
+                    scale="0.2 0.2 0.2"
                     animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset"
+                    gltf-model="#animated-asset5"
                     class="clickable"
                     gesture-handler
                 ></a-entity>
@@ -308,7 +317,41 @@
                 
             >
 
-                <a-video id="flowering-plant" rotation="90 0 180" src="#flowering-plant" height="1" width="1.78" position="0 0 0" autoplay="true">
+                <a-video id="flowering-plant" rotation="90 0 180" src="#flowering-plant" height="1" width="1.78" position="0 0 0" autoplay="false">
+                </a-video>
+            </a-marker>
+
+            <!-- flush tank -->
+            <a-marker
+                id="animated-marker8"
+                type="pattern"
+                preset="custom"
+                url="markers/m8.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerB"
+                
+            >
+
+                <a-video id="flushtank" rotation="90 0 180" src="#flushtank" height="1" width="1.78" position="0 0 0" autoplay="false">
+                </a-video>
+            </a-marker>
+
+            <!-- thermos flask -->
+            <a-marker
+                id="animated-marker4"
+                type="pattern"
+                preset="custom"
+                url="markers/m4.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerB"
+                
+            >
+
+                <a-video id="flask" rotation="90 0 180" src="#flask" height="1" width="1.78" position="0 0 0" autoplay="false">
                 </a-video>
             </a-marker>
 
@@ -325,7 +368,7 @@
                 
             >
 
-                <a-video id="lock" rotation="90 0 180" src="#lock" height="1" width="1.78" position="0 0 0" autoplay="true">
+                <a-video id="lock" rotation="90 0 180" src="#lock" height="1" width="1.78" position="0 0 0" autoplay="false">
                 </a-video>
             </a-marker>
 
@@ -341,7 +384,7 @@
                 id="markerB"
                 
             >
-                <a-video id="tap" rotation="90 0 180" src="#tap" height="1" width="1.78" position="0 0 0" autoplay="true">
+                <a-video id="tap" rotation="90 0 180" src="#tap" height="1" width="1.78" position="0 0 0" play="true">
                 </a-video>
             </a-marker>
 
@@ -355,9 +398,8 @@
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerB"
-                
             >
-                <a-video id="detergent" rotation="90 0 180" src="#detergent" height="1" width="1.78" position="0 0 0" autoplay="true">
+                <a-video id="detergent" rotation="90 0 180" src="#detergent" height="1" width="1.78" position="0 0 0" autoplay>
                 </a-video>
             </a-marker>
 
@@ -373,7 +415,7 @@
                 id="markerB"
                 
             >
-                <a-video id="detergent" rotation="90 0 180" src="#detergent" height="1" width="1.78" position="0 0 0" autoplay="true">
+                <a-video id="detergent" rotation="90 0 180" src="#detergent" height="1" width="1.78" position="0 0 0" autoplay="false">
                 </a-video>
             </a-marker>
 
@@ -389,7 +431,7 @@
                 id="markerB"
                 
             >
-                <a-video id="knife" rotation="90 0 180" src="#knife" height="1" width="1.78" position="0 0 0" autoplay="true">
+                <a-video id="knife" rotation="90 0 180" src="#knife" height="1" width="1.78" position="0 0 0" autoplay="false">
                 </a-video>
             </a-marker>
 
@@ -404,7 +446,7 @@
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerC"
             >
-                <a-video id="pressure-cooker" rotation="90 0 180" src="#pressure-cooker" height="1" width="1.78" position="0 0 0" autoplay="true">
+                <a-video id="pressure-cooker" rotation="90 0 180" src="#pressure-cooker" height="1" width="1.78" position="0 0 0" autoplay="false">
                 </a-video>
             </a-marker>
 
@@ -429,7 +471,7 @@
                 ></a-entity>
             </a-marker>
 
-            <!-- mosquito -->
+            <!-- mosquito
             <a-marker
                 id="animated-marker5"
                 type="pattern"
@@ -444,11 +486,11 @@
                     id="bowser-model"
                     scale="0.05 0.05 0.05"
                     animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset5"
+                    gltf-model="#an"
                     class="clickable"
                     gesture-handler
                 ></a-entity>
-            </a-marker>
+            </a-marker> -->
 
             <!-- wrong match -->
             <a-marker
