@@ -122,20 +122,23 @@
                 <video id="waterVideo" loop="false"  src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" preload="auto"></video>
 
                 <!-- knife -->
-                <video id="knife" loop="false"  src="https://gsfkar.s3.ap-south-1.amazonaws.com/Knife.mp4" preload="none"></video>
+                <video id="knife" loop="false"  src="videos/Knife-_1.mp4" preload="none"></video>
 
                 <!-- fan -->
                 <video id="fan" loop="false"  src="https://gsfkar.s3.ap-south-1.amazonaws.com/Fan.mp4" preload="none"></video>
 
+                <!-- flask -->
+                <video id="flask" loop="false"  src="videos/Thermos Flask.mp4" preload="none"></video>
+
                 <!-- pressure-cooker -->
-                <video id="pressure-cooker" loop="false"  src="https://gsfkar.s3.ap-south-1.amazonaws.com/Pressure%20Cooker.mp4" preload="none"></video>
+                <video id="pressure-cooker" loop="false"  src="videos/Pressure Cooker .mp4" preload="none"></video>
 
                 <!-- flowering-plant -->
                 <video id="flowering-plant" loop="false"  src="https://gsfkar.s3.ap-south-1.amazonaws.com/Flowering%20Plant.mp4" preload="none"></video>
 
 
                 <!-- lock -->
-                <video id="lock" loop="false"  src="https://gsfkar.s3.ap-south-1.amazonaws.com/Lock.mp4" preload="none"></video>
+                <video id="lock" loop="false"  src="videos/Lock-.mp4" preload="none"></video>
 
 
                 <!-- tap -->
@@ -204,6 +207,23 @@
             >
 
                 <a-video id="flushtank" rotation="90 0 180" src="#flushtank" height="1" width="1.78" position="0 0 0" autoplay="false">
+                </a-video>
+            </a-marker>
+
+            <!-- thermos flask -->
+            <a-marker
+                id="animated-marker4"
+                type="pattern"
+                preset="custom"
+                url="markers/m4.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerB"
+                
+            >
+
+                <a-video id="flask" rotation="90 0 180" src="#flask" height="1" width="1.78" position="0 0 0" autoplay="false">
                 </a-video>
             </a-marker>
 
