@@ -108,6 +108,9 @@ function shareMe(){
 marker1.addEventListener("markerFound", (e)=>{ 
     stopStopwatch();
     successAudio.play();
+    let expAudio=new Audio("audio/MosquitoBat.mp3");
+    expAudio.play();
+    
     const jsonData={
         "userId":localStorage.getItem("userId"),
         "gameId":"DD",
@@ -412,7 +415,7 @@ marker10.addEventListener("markerFound", (e)=>{
         
         // toast.innerHTML="Wow, correct!"
         // toast.className = "show";
-        // setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        // setTimeou    t(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
     
         // shareMe();
 
