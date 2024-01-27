@@ -2,10 +2,12 @@ let marker1=document.getElementById('animated-marker')
 let marker2=document.getElementById('animated-marker2')
 let marker4=document.getElementById('animated-marker4')
 let marker5=document.getElementById('animated-marker5')
-let marker12=document.getElementById('animated-marker12')
+let marker23=document.getElementById('animated-marker23')
+let marker32=document.getElementById('animated-marker32')
+let marker34=document.getElementById('animated-marker34')
 let marker8=document.getElementById('animated-marker8')
 let marker9=document.getElementById('animated-marker9')
-let marker6=document.getElementById('animated-marker6')
+let marker7=document.getElementById('animated-marker7')
 let marker11=document.getElementById('animated-marker11')
 let marker10=document.getElementById('animated-marker10')
 
@@ -283,48 +285,48 @@ marker4.addEventListener("markerFound", (e)=>{
 
 })
 
-// marker5.addEventListener("markerFound", (e)=>{ 
+marker5.addEventListener("markerFound", (e)=>{ 
     
-//     const jsonData={
-//         "userId":localStorage.getItem("userId"),
-//         "gameId":"DD",
-//         "points":Math.ceil(100/minutes) 
-//     }
+    const jsonData={
+        "userId":localStorage.getItem("userId"),
+        "gameId":"DD",
+        "points":Math.ceil(100/minutes) 
+    }
 
-//         successAudio.play();
-//         toast.innerHTML="Wow, correct!"
-//         toast.className = "show";
-//         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        successAudio.play();
+        toast.innerHTML="Wow, correct!"
+        toast.className = "show";
+        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
     
-//         shareMe();
+        shareMe();
 
-//         const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
 
-//         fetch(apiUrl,{
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//             mode: 'cors',
-//             body: JSON.stringify(jsonData),
-//         })
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log('Success:', data);
-//             //window.location.href = "index.html";
-//         })
-//         .catch(error => {
-//             console.error('Error:', error);
-//         });
-//     // }else{
-//     //     popup.style.visibility="visible";
-//     //     failureAudio.play();
-//     //     capture()
-//     // }
+        fetch(apiUrl,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    // }else{
+    //     popup.style.visibility="visible";
+    //     failureAudio.play();
+    //     capture()
+    // }
 
-// })
+})
 
-marker6.addEventListener("markerFound", (e)=>{ 
+marker7.addEventListener("markerFound", (e)=>{ 
     
     const jsonData={
         "userId":localStorage.getItem("userId"),
@@ -545,7 +547,89 @@ marker11.addEventListener("markerFound", (e)=>{
 
 })
 
-marker12.addEventListener("markerFound", (e)=>{ 
+marker23.addEventListener("markerFound", (e)=>{ 
+    
+    const jsonData={
+        "userId":localStorage.getItem("userId"),
+        "gameId":"DD",
+        "points":Math.ceil(100/minutes) 
+    }
+
+        successAudio.play();
+        toast.innerHTML="Wow, correct!"
+        toast.className = "show";
+        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    
+        shareMe();
+
+        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+
+        fetch(apiUrl,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    // }else{
+    //     popup.style.visibility="visible";
+    //     failureAudio.play();
+    //     capture()
+    // }
+
+})
+
+marker32.addEventListener("markerFound", (e)=>{ 
+    
+    const jsonData={
+        "userId":localStorage.getItem("userId"),
+        "gameId":"DD",
+        "points":Math.ceil(100/minutes) 
+    }
+
+        successAudio.play();
+        toast.innerHTML="Wow, correct!"
+        toast.className = "show";
+        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    
+        shareMe();
+
+        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+
+        fetch(apiUrl,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    // }else{
+    //     popup.style.visibility="visible";
+    //     failureAudio.play();
+    //     capture()
+    // }
+
+})
+
+marker34.addEventListener("markerFound", (e)=>{ 
     
     const jsonData={
         "userId":localStorage.getItem("userId"),

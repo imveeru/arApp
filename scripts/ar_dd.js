@@ -2,13 +2,14 @@ let marker1=document.getElementById('animated-marker')
 let marker2=document.getElementById('animated-marker2')
 let marker4=document.getElementById('animated-marker4')
 let marker5=document.getElementById('animated-marker5')
-let marker12=document.getElementById('animated-marker12')
+let marker23=document.getElementById('animated-marker23')
+let marker32=document.getElementById('animated-marker32')
+let marker34=document.getElementById('animated-marker34')
 let marker8=document.getElementById('animated-marker8')
 let marker9=document.getElementById('animated-marker9')
-let marker6=document.getElementById('animated-marker6')
+let marker7=document.getElementById('animated-marker7')
 let marker11=document.getElementById('animated-marker11')
 let marker10=document.getElementById('animated-marker10')
-
 let toast = document.getElementById("snackbar");
 
 let marker3=document.getElementById("animated-marker3")
@@ -106,9 +107,12 @@ function shareMe(){
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 
+let mosquitoAudio=new Audio("audio/MosquitoBat.mp3");
+
+
 marker1.addEventListener("markerFound", (e)=>{ 
     stopStopwatch();
-    successAudio.play();
+    
     const jsonData={
         "userId":localStorage.getItem("userId"),
         "gameId":"DD",
@@ -116,6 +120,9 @@ marker1.addEventListener("markerFound", (e)=>{
     }
 
     if (currModel==1){
+        successAudio.play();
+        mosquitoAudio.play();
+
         toast.innerHTML="Wow, correct!"
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
@@ -146,6 +153,522 @@ marker1.addEventListener("markerFound", (e)=>{
         capture()
     }
 
+
+})
+
+marker1.addEventListener("markerLost",(e)=>{
+    mosquitoAudio.pause()
+});
+
+marker2.addEventListener("markerFound", (e)=>{ 
+    
+    const jsonData={
+        "userId":localStorage.getItem("userId"),
+        "gameId":"DD",
+        "points":Math.ceil(100/minutes) 
+    }
+
+        successAudio.play();
+        toast.innerHTML="Wow, correct!"
+        toast.className = "show";
+        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    
+        shareMe();
+
+        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+
+        fetch(apiUrl,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    // }else{
+    //     popup.style.visibility="visible";
+    //     failureAudio.play();
+    //     capture()
+    // }
+
+})
+
+marker3.addEventListener("markerFound", (e)=>{ 
+    successAudio.play();
+    let vid=document.getElementById("pressure-cooker")
+    vid.play();
+    
+    const jsonData={
+        "userId":localStorage.getItem("userId"),
+        "gameId":"DD",
+        "points":Math.ceil(100/minutes) 
+    }
+
+        
+        shareMe();
+
+        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+
+        fetch(apiUrl,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    // }else{
+    //     popup.style.visibility="visible";
+    //     failureAudio.play();
+    //     capture()
+    // }
+
+})
+
+marker3.addEventListener("markerLost",(e)=>{
+    let vid=document.getElementById("pressure-cooker")
+    vid.pause();
+})
+
+marker4.addEventListener("markerFound", (e)=>{ 
+    
+    const jsonData={
+        "userId":localStorage.getItem("userId"),
+        "gameId":"DD",
+        "points":Math.ceil(100/minutes) 
+    }
+
+        successAudio.play();
+        toast.innerHTML="Wow, correct!"
+        toast.className = "show";
+        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    
+        shareMe();
+
+        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+
+        fetch(apiUrl,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    // }else{
+    //     popup.style.visibility="visible";
+    //     failureAudio.play();
+    //     capture()
+    // }
+
+})
+
+marker5.addEventListener("markerFound", (e)=>{ 
+    
+    const jsonData={
+        "userId":localStorage.getItem("userId"),
+        "gameId":"DD",
+        "points":Math.ceil(100/minutes) 
+    }
+
+        successAudio.play();
+        toast.innerHTML="Wow, correct!"
+        toast.className = "show";
+        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    
+        shareMe();
+
+        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+
+        fetch(apiUrl,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    // }else{
+    //     popup.style.visibility="visible";
+    //     failureAudio.play();
+    //     capture()
+    // }
+
+})
+
+marker7.addEventListener("markerFound", (e)=>{ 
+    
+    const jsonData={
+        "userId":localStorage.getItem("userId"),
+        "gameId":"DD",
+        "points":Math.ceil(100/minutes) 
+    }
+
+        successAudio.play();
+        toast.innerHTML="Wow, correct!"
+        toast.className = "show";
+        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    
+        shareMe();
+
+        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+
+        fetch(apiUrl,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    // }else{
+    //     popup.style.visibility="visible";
+    //     failureAudio.play();
+    //     capture()
+    // }
+
+})
+
+marker8.addEventListener("markerFound", (e)=>{ 
+
+    let vid=document.getElementById("flushtank")
+    vid.play();
+    
+    const jsonData={
+        "userId":localStorage.getItem("userId"),
+        "gameId":"DD",
+        "points":Math.ceil(100/minutes) 
+    }
+
+        successAudio.play();
+        toast.innerHTML="Wow, correct!"
+        toast.className = "show";
+        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    
+        shareMe();
+
+        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+
+        fetch(apiUrl,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    // }else{
+    //     popup.style.visibility="visible";
+    //     failureAudio.play();
+    //     capture()
+    // }
+
+})
+
+marker8.addEventListener("markerLost",(e)=>{
+    let vid=document.getElementById("flushtank")
+    vid.pause();
+})
+
+marker9.addEventListener("markerFound", (e)=>{ 
+    
+    const jsonData={
+        "userId":localStorage.getItem("userId"),
+        "gameId":"DD",
+        "points":Math.ceil(100/minutes) 
+    }
+
+        successAudio.play();
+        toast.innerHTML="Wow, correct!"
+        toast.className = "show";
+        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    
+        shareMe();
+
+        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+
+        fetch(apiUrl,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    // }else{
+    //     popup.style.visibility="visible";
+    //     failureAudio.play();
+    //     capture()
+    // }
+
+})
+
+marker10.addEventListener("markerFound", (e)=>{ 
+    successAudio.play();
+    let vid=document.getElementById("detergent")
+    vid.play();
+    
+    const jsonData={
+        "userId":localStorage.getItem("userId"),
+        "gameId":"DD",
+        "points":Math.ceil(100/minutes) 
+    }
+
+        
+        // toast.innerHTML="Wow, correct!"
+        // toast.className = "show";
+        // setTimeou    t(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    
+        // shareMe();
+
+        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+
+        fetch(apiUrl,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    // }else{
+    //     popup.style.visibility="visible";
+    //     failureAudio.play();
+    //     capture()
+    // }
+
+})
+
+marker10.addEventListener("markerLost",(e)=>{
+    let vid=document.getElementById("detergent");
+    vid.pause();
+})
+
+marker11.addEventListener("markerFound", (e)=>{ 
+    
+    const jsonData={
+        "userId":localStorage.getItem("userId"),
+        "gameId":"DD",
+        "points":Math.ceil(100/minutes) 
+    }
+
+        successAudio.play();
+        toast.innerHTML="Wow, correct!"
+        toast.className = "show";
+        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    
+        shareMe();
+
+        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+
+        fetch(apiUrl,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    // }else{
+    //     popup.style.visibility="visible";
+    //     failureAudio.play();
+    //     capture()
+    // }
+
+})
+
+marker23.addEventListener("markerFound", (e)=>{ 
+    
+    const jsonData={
+        "userId":localStorage.getItem("userId"),
+        "gameId":"DD",
+        "points":Math.ceil(100/minutes) 
+    }
+
+        successAudio.play();
+        toast.innerHTML="Wow, correct!"
+        toast.className = "show";
+        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    
+        shareMe();
+
+        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+
+        fetch(apiUrl,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    // }else{
+    //     popup.style.visibility="visible";
+    //     failureAudio.play();
+    //     capture()
+    // }
+
+})
+
+marker32.addEventListener("markerFound", (e)=>{ 
+    
+    const jsonData={
+        "userId":localStorage.getItem("userId"),
+        "gameId":"DD",
+        "points":Math.ceil(100/minutes) 
+    }
+
+        successAudio.play();
+        toast.innerHTML="Wow, correct!"
+        toast.className = "show";
+        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    
+        shareMe();
+
+        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+
+        fetch(apiUrl,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    // }else{
+    //     popup.style.visibility="visible";
+    //     failureAudio.play();
+    //     capture()
+    // }
+
+})
+
+marker34.addEventListener("markerFound", (e)=>{ 
+    
+    const jsonData={
+        "userId":localStorage.getItem("userId"),
+        "gameId":"DD",
+        "points":Math.ceil(100/minutes) 
+    }
+
+        successAudio.play();
+        toast.innerHTML="Wow, correct!"
+        toast.className = "show";
+        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    
+        shareMe();
+
+        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+
+        fetch(apiUrl,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    // }else{
+    //     popup.style.visibility="visible";
+    //     failureAudio.play();
+    //     capture()
+    // }
 
 })
 
