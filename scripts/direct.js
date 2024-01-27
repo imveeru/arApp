@@ -410,11 +410,11 @@ marker10.addEventListener("markerFound", (e)=>{
     }
 
         
-        toast.innerHTML="Wow, correct!"
-        toast.className = "show";
-        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        // toast.innerHTML="Wow, correct!"
+        // toast.className = "show";
+        // setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
     
-        shareMe();
+        // shareMe();
 
         const apiUrl = "https://gfsk-backend.onrender.com/add-points";
 
