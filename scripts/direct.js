@@ -642,7 +642,6 @@ marker32.addEventListener("markerLost",(e)=>{
 
 marker34.addEventListener("markerFound", (e)=>{ 
 
-    alert("sss")
     let vid=document.getElementById("flowering-plant")
     vid.play();
     
