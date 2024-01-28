@@ -406,6 +406,9 @@ marker7.addEventListener("markerLost",(e)=>{
 // })
 
 marker9.addEventListener("markerFound", (e)=>{ 
+
+    let vid=document.getElementById("flushtank")
+    vid.play();
     
     const jsonData={
         "userId":localStorage.getItem("userId"),
@@ -444,6 +447,11 @@ marker9.addEventListener("markerFound", (e)=>{
     //     capture()
     // }
 
+})
+
+marker9.addEventListener("markerLost",(e)=>{
+    let vid=document.getElementById("flushtank")
+    vid.pause();
 })
 
 marker10.addEventListener("markerFound", (e)=>{ 
