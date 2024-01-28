@@ -247,13 +247,23 @@
                     src="models/mosquito.glb"
                 ></a-asset-item>
 
+                <a-asset-item
+                    id="animated-asset6"
+                    src="assets/old_frying_pan.glb"
+                ></a-asset-item>
+
+                <a-asset-item
+                    id="animated-asset7"
+                    src="assets/fly_spray_can.glb"
+                ></a-asset-item>
+
                 <!-- <video id="waterVideo" loop="false"  src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" preload="auto"></video> -->
 
                 <!-- knife -->
                 <video id="knife" loop="false"  src="videos/Knife-_1.mp4" preload="none"></video>
 
                 <!-- fan -->
-                <video id="fan" loop="false"  src="https://gsfkar.s3.ap-south-1.amazonaws.com/Fan.mp4" preload="none"></video>
+                <video id="fan" loop="false"  src="videos/Fan.mp4" preload="none"></video>
 
                 <!-- flask -->
                 <video id="flask" loop="false"  src="videos/Thermos Flask.mp4" preload="none"></video>
@@ -262,7 +272,7 @@
                 <video id="pressure-cooker" loop="false"  src="videos/PressureCooker.mp4" preload="none"></video>
 
                 <!-- flowering-plant -->
-                <video id="flowering-plant" loop="false"  src="https://gsfkar.s3.ap-south-1.amazonaws.com/Flowering%20Plant.mp4" preload="none"></video>
+                <video id="flowering-plant" loop="false"  src="videos/FloweringPlant.mp4" preload="none"></video>
 
 
                 <!-- lock -->
@@ -270,12 +280,12 @@
 
 
                 <!-- tap -->
-                <video id="tap" loop="false" src="https://gsfkar.s3.ap-south-1.amazonaws.com/Water%20Tap.mp4" preload="none"></video>
+                <video id="tap" loop="false" src="videos/Tap.mp4" preload="none"></video>
 
 
-                <video id="detergent" loop="false" src="https://gsfkar.s3.ap-south-1.amazonaws.com/Detergent.mp4" preload="none"></video>
+                <video id="detergent" loop="false" src="videos/Detergent.mp4" preload="none"></video>
 
-                <video id="flushtank" loop="false" src="videos/Flush Tank.mp4" preload="none"></video>
+                <video id="flushtank" loop="false" src="videos/FlushTank.mp4" preload="none"></video>
 
                 <!-- <video id="detergent" loop="false" src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" preload="none"></video> -->
 
@@ -290,7 +300,7 @@
                 id="animated-marker34"
                 type="pattern"
                 preset="custom"
-                url="markers/m34.patt"
+                url="markers/m40.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
@@ -341,7 +351,7 @@
                 id="animated-marker23"
                 type="pattern"
                 preset="custom"
-                url="markers/m23.patt"
+                url="markers/lock_m.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
@@ -429,7 +439,7 @@
             >
                 <a-video id="pressure-cooker" rotation="90 0 180" src="#pressure-cooker" height="1" width="1.78" position="0 0 0" autoplay="false">
                 </a-video>
-            </a-marker>
+            </a-marker> 
 
             <!-- match stick -->
             <a-marker
@@ -452,6 +462,48 @@
                 ></a-entity>
             </a-marker>
 
+            <!-- pan -->
+            <a-marker
+                id="animated-marker16"
+                type="pattern"
+                preset="custom"
+                url="markers/m16.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerC"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.5 0.5 0.5"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset6"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+
+            <!-- spray -->
+            <a-marker
+                id="animated-marker18"
+                type="pattern"
+                preset="custom"
+                url="markers/m18.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerC"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.0005 0.0005 0.0005"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset7"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+
             <!-- mosquito -->
             <a-marker
                 id="animated-marker"
@@ -467,7 +519,7 @@
                     id="bowser-model"
                     scale="0.05 0.05 0.05"
                     animation-mixer="loop: repeat"
-                    gltf-model="#an"
+                    gltf-model="#animated-asset5"
                     class="clickable"
                     gesture-handler
                 ></a-entity>
