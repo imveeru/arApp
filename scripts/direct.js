@@ -494,8 +494,7 @@ marker10.addEventListener("markerLost",(e)=>{
 })
 
 marker11.addEventListener("markerFound", (e)=>{ 
-    
-    alert("deded")
+
     let vid=document.getElementById("detergent")
     vid.play();
 
