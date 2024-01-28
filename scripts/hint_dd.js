@@ -2,7 +2,8 @@ let clueTitle=document.getElementById("clueTitle")
 let clueText=document.getElementById("clueText")
 let nextBtn=document.getElementById("nextBtn")
 
-let model_id=Math.floor(Math.random() * 18);
+let models=[1,2,3,4,6,7,8,9,10,11,16,17,18]
+let model_id=Math.floor(Math.random() * models.length);
 
 let clues;
 

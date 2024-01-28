@@ -161,7 +161,7 @@ marker1.addEventListener("markerLost",(e)=>{
 });
 
 marker2.addEventListener("markerFound", (e)=>{ 
-    
+    if (currModel==2){
     matchBoxAudio.play();
 
     const jsonData={
@@ -194,11 +194,11 @@ marker2.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
 })
 
@@ -212,7 +212,8 @@ marker4.addEventListener("markerLost",(e)=>{
 })
 
 marker4.addEventListener("markerFound", (e)=>{ 
-
+    
+    if (currModel==3){
     successAudio.play();
     let vid=document.getElementById("pressure-cooker")
     vid.play();
@@ -248,16 +249,17 @@ marker4.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
 })
 
 marker5.addEventListener("markerFound", (e)=>{ 
 
+    if (currModel==4){
     let vid=document.getElementById("flask")
     vid.play();
     
@@ -292,11 +294,11 @@ marker5.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
 })
 
@@ -307,6 +309,7 @@ marker5.addEventListener("markerLost",(e)=>{
 
 marker7.addEventListener("markerFound", (e)=>{ 
 
+    if (currModel==6){
     let vid=document.getElementById("fan")
     vid.play();
     
@@ -341,11 +344,11 @@ marker7.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
 })
 
@@ -406,6 +409,7 @@ marker7.addEventListener("markerLost",(e)=>{
 
 marker9.addEventListener("markerFound", (e)=>{ 
 
+    if (currModel==8){
     let vid=document.getElementById("flushtank")
     vid.play();
     
@@ -440,11 +444,11 @@ marker9.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
 })
 
@@ -454,6 +458,8 @@ marker9.addEventListener("markerLost",(e)=>{
 })
 
 marker10.addEventListener("markerFound", (e)=>{ 
+
+    if (currModel==9){
     successAudio.play();
     let vid=document.getElementById("tap")
     vid.play();
@@ -489,11 +495,11 @@ marker10.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
 })
 
@@ -503,6 +509,8 @@ marker10.addEventListener("markerLost",(e)=>{
 })
 
 marker11.addEventListener("markerFound", (e)=>{ 
+
+    if (currModel==7){
 
     let vid=document.getElementById("detergent")
     vid.play();
@@ -538,11 +546,11 @@ marker11.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
 })
 
@@ -554,6 +562,7 @@ marker11.addEventListener("markerLost",(e)=>{
 let panAudio=new Audio("audio/Non-Stick Pan.mp3")
 marker16.addEventListener("markerFound", (e)=>{ 
 
+    if (currModel==16){
     
     panAudio.play();
 
@@ -588,11 +597,11 @@ marker16.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
 })
 
@@ -603,6 +612,8 @@ marker16.addEventListener("markerLost",(e)=>{
 let sprayAudio=new Audio("audio/Insect Spray.mp3")
 marker18.addEventListener("markerFound", (e)=>{ 
 
+
+    if (currModel==18){
     
     sprayAudio.play();
 
@@ -637,11 +648,11 @@ marker18.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
 })
 
@@ -651,6 +662,7 @@ marker18.addEventListener("markerLost",(e)=>{
 
 marker23.addEventListener("markerFound", (e)=>{ 
 
+    if (currModel==10){
     let vid=document.getElementById("lock")
     vid.play();
     
@@ -685,11 +697,11 @@ marker23.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
 })
 
@@ -700,6 +712,7 @@ marker23.addEventListener("markerLost",(e)=>{
 
 marker32.addEventListener("markerFound", (e)=>{ 
 
+    if (currModel==11){
     let vid=document.getElementById("knife")
     vid.play();
     
@@ -734,11 +747,11 @@ marker32.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
 })
 
@@ -749,6 +762,7 @@ marker32.addEventListener("markerLost",(e)=>{
 
 marker34.addEventListener("markerFound", (e)=>{ 
 
+    if (currModel==17){
     let vid=document.getElementById("flowering-plant")
     vid.play();
     
@@ -783,11 +797,11 @@ marker34.addEventListener("markerFound", (e)=>{
         .catch(error => {
             console.error('Error:', error);
         });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
 
 })
 
