@@ -108,6 +108,7 @@ function shareMe(){
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 let mosquitoAudio=new Audio("audio/MosquitoBat.mp3");
+let matchBoxAudio=new Audio("audio/Match Box.mp3");
 
 marker1.addEventListener("markerFound", (e)=>{ 
     stopStopwatch();
@@ -160,6 +161,8 @@ marker1.addEventListener("markerLost",(e)=>{
 
 marker2.addEventListener("markerFound", (e)=>{ 
     
+    matchBoxAudio.play();
+
     const jsonData={
         "userId":localStorage.getItem("userId"),
         "gameId":"DD",
@@ -167,8 +170,7 @@ marker2.addEventListener("markerFound", (e)=>{
     }
 
         successAudio.play();
-        toast.innerHTML="Wow, correct!"
-        toast.className = "show";
+        
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
     
         shareMe();
@@ -197,6 +199,10 @@ marker2.addEventListener("markerFound", (e)=>{
     //     capture()
     // }
 
+})
+
+marker2.addEventListener("markerLost",(e)=>{
+    matchBoxAudio.pause();
 })
 
 marker4.addEventListener("markerLost",(e)=>{
@@ -349,6 +355,7 @@ marker7.addEventListener("markerLost",(e)=>{
 
 marker8.addEventListener("markerFound", (e)=>{ 
 
+    alert("adfsasdf")
     let vid=document.getElementById("flushtank")
     vid.play();
     
@@ -488,6 +495,7 @@ marker10.addEventListener("markerLost",(e)=>{
 
 marker11.addEventListener("markerFound", (e)=>{ 
     
+    alert("deded")
     let vid=document.getElementById("detergent")
     vid.play();
 
