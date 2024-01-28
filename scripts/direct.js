@@ -5,7 +5,7 @@ let marker5=document.getElementById('animated-marker5')
 let marker23=document.getElementById('animated-marker23')
 let marker32=document.getElementById('animated-marker32')
 let marker34=document.getElementById('animated-marker34')
-let marker8=document.getElementById('animated-marker8')
+// let marker8=document.getElementById('animated-marker8')
 let marker9=document.getElementById('animated-marker9')
 let marker7=document.getElementById('animated-marker7')
 let marker11=document.getElementById('animated-marker11')
@@ -353,55 +353,55 @@ marker7.addEventListener("markerLost",(e)=>{
     vid.pause();
 })
 
-marker8.addEventListener("markerFound", (e)=>{ 
+// marker8.addEventListener("markerFound", (e)=>{ 
 
-    alert("adfsasdf")
-    let vid=document.getElementById("flushtank")
-    vid.play();
+//     alert("adfsasdf")
+//     let vid=document.getElementById("flushtank")
+//     vid.play();
     
-    const jsonData={
-        "userId":localStorage.getItem("userId"),
-        "gameId":"DD",
-        "points":Math.ceil(100/minutes) 
-    }
+//     const jsonData={
+//         "userId":localStorage.getItem("userId"),
+//         "gameId":"DD",
+//         "points":Math.ceil(100/minutes) 
+//     }
 
-        successAudio.play();
-        toast.innerHTML="Wow, correct!"
-        toast.className = "show";
-        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+//         successAudio.play();
+//         toast.innerHTML="Wow, correct!"
+//         toast.className = "show";
+//         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
     
-        shareMe();
+//         shareMe();
 
-        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+//         const apiUrl = "https://gfsk-backend.onrender.com/add-points";
 
-        fetch(apiUrl,{
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            mode: 'cors',
-            body: JSON.stringify(jsonData),
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            //window.location.href = "index.html";
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-    // }else{
-    //     popup.style.visibility="visible";
-    //     failureAudio.play();
-    //     capture()
-    // }
+//         fetch(apiUrl,{
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             mode: 'cors',
+//             body: JSON.stringify(jsonData),
+//         })
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log('Success:', data);
+//             //window.location.href = "index.html";
+//         })
+//         .catch(error => {
+//             console.error('Error:', error);
+//         });
+//     // }else{
+//     //     popup.style.visibility="visible";
+//     //     failureAudio.play();
+//     //     capture()
+//     // }
 
-})
+// })
 
-marker8.addEventListener("markerLost",(e)=>{
-    let vid=document.getElementById("flushtank")
-    vid.pause();
-})
+// marker8.addEventListener("markerLost",(e)=>{
+//     let vid=document.getElementById("flushtank")
+//     vid.pause();
+// })
 
 marker9.addEventListener("markerFound", (e)=>{ 
     
@@ -545,7 +545,6 @@ marker11.addEventListener("markerLost",(e)=>{
 
 marker23.addEventListener("markerFound", (e)=>{ 
 
-    alert("sss")
     let vid=document.getElementById("lock")
     vid.play();
     
