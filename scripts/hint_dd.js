@@ -4,6 +4,7 @@ let nextBtn=document.getElementById("nextBtn")
 
 let models=[1,3,6,8,9,19,10,11,13,16,18]
 let model_id=Math.floor(Math.random() * models.length);
+localStorage.removeItem("modelId")
 
 let clues;
 
