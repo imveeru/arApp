@@ -8,7 +8,6 @@
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-        <script src="1b-html2canvas.js"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
         <style>
@@ -69,9 +68,9 @@
             border-radius: 12px;
             padding: 16px;
             position: fixed;
-            z-index: 1;
+            z-index: 9999999999999999999999999;
             left: 50%;
-            bottom: 30px;
+            top: 0px;
             font-size: 14px;
             }
 
@@ -425,16 +424,16 @@
                 id="markerB"
                 
             >
-                <!-- <a-video id="fan" rotation="90 0 180" src="#fan" height="1" width="1.78" position="0 0 0" autoplay="false">
-                </a-video> -->
-                <a-entity
+                <a-video id="fan" rotation="90 0 180" src="#fan" height="1" width="1.78" position="0 0 0" autoplay="false">
+                </a-video>
+                <!-- <a-entity
                     id="bowser-model"
                     scale="0.5 0.5 0.5"
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset9"
                     class="clickable"
                     gesture-handler
-                ></a-entity>
+                ></a-entity> -->
             </a-marker>
 
             <!-- knife -->

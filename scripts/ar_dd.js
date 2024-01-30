@@ -312,9 +312,9 @@ let fanAudio=new Audio("audio/Fan.mp3")
 marker7.addEventListener("markerFound", (e)=>{ 
 
     if (currModel==6){
-    // let vid=document.getElementById("fan")
-    // vid.play();
-    fanAudio.play()
+    let vid=document.getElementById("fan")
+    vid.play();
+    // fanAudio.play()
     
     const jsonData={
         "userId":localStorage.getItem("userId"),
@@ -356,9 +356,9 @@ marker7.addEventListener("markerFound", (e)=>{
 })
 
 marker7.addEventListener("markerLost",(e)=>{
-    // let vid=document.getElementById("fan")
-    // vid.pause();
-    fanAudio.pause();
+    let vid=document.getElementById("fan")
+    vid.pause();
+    //fanAudio.pause();
 })
 
 // marker8.addEventListener("markerFound", (e)=>{ 
