@@ -2,3 +2,9 @@ let clues=["Identify an object in the room that is known for efficiently conduct
 
 let models=["m64","m65","m66","m67","m68","m69","m70","m71","m72","m73"]
 
+let model_id=Math.floor(Math.random() * clues.length);
+localStorage.removeItem("hw_modelId")
+localStorage.setItem("hw_modelId",model_id);
+
+let c=document.getElementById("clueText")
+c.innerHTML=clues[model_id]

@@ -1,0 +1,738 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
+        <style>
+            .buttons {
+              position: absolute;
+              top: 0;
+              left: 0;
+              margin-left: 10px;
+              width: 100%;
+              height: 5em;
+              display: flex;
+              justify-content: start;
+              align-items: center;
+              z-index: 10;
+            }
+        
+            .say-hi-button {
+                padding: 0.5em 2em;
+              border-radius: 4px;
+              border: none;
+              font-weight: bold;
+              text-align: center;
+              background-image: url('ui_assets/Left.svg');
+              background-repeat: no-repeat;
+              display: flex;
+              justify-content: start;
+              align-items: center;  
+              color: white;
+              width: 4em;
+              height: 2em;
+              text-decoration: none;
+              font-family: sans-serif;
+            }
+
+            .timer{
+                padding: 0.25rem;
+                border-radius: 4px;
+                border: none;
+                background: white;
+                color: black;
+                width: 4rem;
+                height: 2rem;
+                margin-left: auto;
+                font-family: sans-serif;
+                font-weight: bold;
+                text-align: center;
+                margin-right: 1em;
+            }
+
+            #snackbar {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #fff;
+            font-family: sans-serif;
+            color: #000;
+            text-align: center;
+            border-radius: 12px;
+            padding: 16px;
+            position: fixed;
+            z-index: 9999999999999999999999999;
+            left: 50%;
+            top: 100px;
+            font-size: 14px;
+            }
+
+            #snackbar.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+
+            @-webkit-keyframes fadein {
+            from {bottom: 0; opacity: 0;} 
+            to {bottom: 30px; opacity: 1;}
+            }
+
+            @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+            }
+
+            @-webkit-keyframes fadeout {
+            from {bottom: 30px; opacity: 1;} 
+            to {bottom: 0; opacity: 0;}
+            }
+
+            @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+            }
+
+            #popupContainer{
+                position: absolute;
+                background: rgba(0, 0, 0,0.96);
+                z-index: 999999999999999999999999999999;
+                height: 100vh;
+                width: 100vw;
+                top: 0;
+                left: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .popup{
+                background-image: url('ui_assets/Badge\ Background\ Slot.svg');
+                background-repeat: no-repeat;
+                width: 80vw;
+                height: 60vh;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 1rem;
+                border-radius: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                font-family: sans-serif;
+                font-size: large;
+            }
+
+            .popup>img{
+                width: 70%;
+                opacity: 60%;
+                mix-blend-mode: multiply;
+            }
+            
+            .popup>p{
+                color: white;
+                font-family: 'Changa One', sans-serif;
+            }
+
+            .popupBtns{
+                display: flex;
+                gap: 1rem;
+            }
+
+            .popupBtn1{
+                padding: 1.5rem;
+                /* background: #1D40AF; */
+                background-image: url('ui_assets/Button-2.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                display: flex;
+                align-content: center;
+                color: white;
+            }
+
+            .popupBtn2{
+                padding: 1.5rem;
+                background-image: url('ui_assets/Button-2.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                display: flex;
+                align-content: center;
+                color: white;
+            }
+
+            a{
+                text-decoration: none;
+            }
+            .web-share{
+                z-index: 9999999999999999999999999999999999999999;
+            }
+        </style>
+        <meta charset='utf-8'>
+    </head>
+
+    <body style="margin: 0; overflow: hidden;">
+
+        <div class="buttons">
+            <a href="index.html" class="say-hi-button text-lg font-bold">
+                <!-- <i class="material-icons">arrow_back</i> Back -->
+            </a>
+            <p id="timer" class="timer"></p>
+            <div id="snackbar"></div>
+        </div>
+
+        <div id="popupContainer" style="visibility: hidden;" class="absolute z-50 bg-black min-h-[100dvh] min-w-[100dvw]">
+            <div class="popup">
+                <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/9afd3b92ab41ffca7f368a8fcbd6d39a75894efe0edbc14cf1f067cf625e6678.png"/>
+                <p>boohoo!</p>
+                <div class="popupBtns">
+                    <a class="popupBtn2" href="hint_hw_dis.html">
+                        Give up
+                    </a>
+                    <a class="popupBtn1" href="ar_hw_dis.html">
+                        Try Again
+                    </a>
+                </div>
+                
+
+            </div>
+        </div>
+
+        <a-scene
+            vr-mode-ui="enabled: false;"
+            loading-screen="enabled: false;"
+            renderer="logarithmicDepthBuffer: true;"
+            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+            id="scene"
+            embedded
+            gesture-detector
+        >
+            <a-assets>
+                <a-asset-item
+                    id="tick"
+                    src="models/checkmark.glb"
+                ></a-asset-item>
+            </a-assets>
+
+            <a-marker
+                id="animated-marker-m41"
+                type="pattern"
+                preset="custom"
+                url="markers/m41.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m42"
+                type="pattern"
+                preset="custom"
+                url="markers/m42.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+<a-marker
+                id="animated-marker-m43"
+                type="pattern"
+                preset="custom"
+                url="markers/m43.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m84"
+                type="pattern"
+                preset="custom"
+                url="markers/m84.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m45"
+                type="pattern"
+                preset="custom"
+                url="markers/m45.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m46"
+                type="pattern"
+                preset="custom"
+                url="markers/m46.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m85"
+                type="pattern"
+                preset="custom"
+                url="markers/m85.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m48"
+                type="pattern"
+                preset="custom"
+                url="markers/m48.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m50"
+                type="pattern"
+                preset="custom"
+                url="markers/m50.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m49"
+                type="pattern"
+                preset="custom"
+                url="markers/m49.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m51"
+                type="pattern"
+                preset="custom"
+                url="markers/m51.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m52"
+                type="pattern"
+                preset="custom"
+                url="markers/m52.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m53"
+                type="pattern"
+                preset="custom"
+                url="markers/m53.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m86"
+                type="pattern"
+                preset="custom"
+                url="markers/m86.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m55"
+                type="pattern"
+                preset="custom"
+                url="markers/m55.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m56"
+                type="pattern"
+                preset="custom"
+                url="markers/m56.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m57"
+                type="pattern"
+                preset="custom"
+                url="markers/m57.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m58"
+                type="pattern"
+                preset="custom"
+                url="markers/m58.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m59"
+                type="pattern"
+                preset="custom"
+                url="markers/m59.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m60"
+                type="pattern"
+                preset="custom"
+                url="markers/m60.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m61"
+                type="pattern"
+                preset="custom"
+                url="markers/m61.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m62"
+                type="pattern"
+                preset="custom"
+                url="markers/m62.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m87"
+                type="pattern"
+                preset="custom"
+                url="markers/m87.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+> 
+
+            
+
+            
+
+            <a-entity camera></a-entity>
+        </a-scene>
+
+        <script src="scripts/homewiz/ar_dis.js"></script>
+    </body>
+</html>
