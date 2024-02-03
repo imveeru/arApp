@@ -15,7 +15,7 @@ let marker11=document.getElementById('animated-marker11')
 let marker12=document.getElementById('animated-marker12')
 let marker10=document.getElementById('animated-marker10')
 
-let toast = document.getElementById("snackbar");
+// let toast = document.getElementById("snackbar");
 
 // let marker3=document.getElementById("animated-marker3")
 // console.log("attr",marker3.children[0].attr)
@@ -88,23 +88,24 @@ let popup=document.getElementById("popupContainer")
 // }
 
 function shareMe(){
-    let imgData
-    html2canvas(document.body).then(canvas => {
-        let a = document.createElement("a");
-        a.download = "ss.png";
-        a.href = canvas.toDataURL("image/png");
-        imgData = canvas.toDataURL("image/png");
-        console.log(imgData);
-      });
+    // let imgData
+    // html2canvas(document.body).then(canvas => {
+    //     let a = document.createElement("a");
+    //     a.download = "ss.png";
+    //     a.href = canvas.toDataURL("image/png");
+    //     imgData = canvas.toDataURL("image/png");
+    //     console.log(imgData);
+    //   });
 
-    navigator.share({
-        files:[imgData],
-        title: 'GSFK AR Connect',
-        text: 'Hey all, I\'ve unlocked an achievement in GSFK AR Connect game!',
-        url: '',
-    })
-    .then( _ => console.log('Successful share'))
-    .catch( error => console.log('Error sharing', error));
+    // navigator.share({
+    //     files:[imgData],
+    //     title: 'GSFK AR Connect',
+    //     text: 'Hey all, I\'ve unlocked an achievement in GSFK AR Connect game!',
+    //     url: '',
+    // })
+    // .then( _ => console.log('Successful share'))
+    // .catch( error => console.log('Error sharing', error));
+    console.log("");
     
 }
 
