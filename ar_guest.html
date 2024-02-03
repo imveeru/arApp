@@ -139,6 +139,9 @@
                     src="assets/simple_ceiling_fan.glb"
                 ></a-asset-item>
 
+                <!-- water tank -->
+                <video id="water-tank" loop="false"  src="videos/WaterTank.mp4" preload="none"></video>
+
                 <!-- <video id="waterVideo" loop="false"  src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" preload="auto"></video> -->
 
                 <!-- knife -->
@@ -330,6 +333,23 @@
                     class="clickable"
                     gesture-handler
                 ></a-entity> -->
+            </a-marker>
+
+            <!-- water tank -->
+            <a-marker
+                id="animated-marker25"
+                type="pattern"
+                preset="custom"
+                url="markers/m25.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerB"
+                
+            >
+
+                <a-video id="water_tank" rotation="90 0 180" src="#water-tank" height="1" width="1.78" position="0 0 0" autoplay="false">
+                </a-video>
             </a-marker>
 
             <!-- knife -->
