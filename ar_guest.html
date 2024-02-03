@@ -156,6 +156,11 @@
                 <!-- flowering-plant -->
                 <video id="flowering-plant" loop="false"  src="videos/FloweringPlant.mp4" preload="none"></video>
 
+                <!-- towel -->
+                <video id="towel" loop="false"  src="videos/Towel.mp4" preload="none"></video>
+
+                <!-- dust -->
+                <video id="dust" loop="false"  src="videos/Dust.mp4" preload="none"></video>
 
                 <!-- lock -->
                 <video id="lock" loop="false"  src="videos/Lock-.mp4" preload="none"></video>
@@ -208,6 +213,23 @@
             >
 
                 <a-video id="flushtank" rotation="90 0 180" src="#flushtank" height="1" width="1.78" position="0 0 0" autoplay="false">
+                </a-video>
+            </a-marker>
+
+            <!-- towel -->
+            <a-marker
+                id="animated-marker39"
+                type="pattern"
+                preset="custom"
+                url="markers/m39.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerB"
+                
+            >
+
+                <a-video id="towel" rotation="90 0 180" src="#towel" height="1" width="1.78" position="0 0 0" autoplay="false">
                 </a-video>
             </a-marker>
 
@@ -338,6 +360,21 @@
                 id="markerC"
             >
                 <a-video id="pressure-cooker" rotation="90 0 180" src="#pressure-cooker" height="1" width="1.78" position="0 0 0" autoplay="false">
+                </a-video>
+            </a-marker> 
+
+            <!-- dust -->
+            <a-marker
+                id="animated-marker12"
+                type="pattern"
+                preset="custom"
+                url="markers/m12.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerC"
+            >
+                <a-video id="dust" rotation="90 0 180" src="#dust" height="1" width="1.78" position="0 0 0" autoplay="false">
                 </a-video>
             </a-marker> 
 

@@ -816,3 +816,53 @@ marker34.addEventListener("markerLost",(e) => {
     let vid=document.getElementById("flowering-plant")
     vid.pause();
 });
+
+marker39.addEventListener("markerFound", (e)=>{ 
+
+    if (currModel==19){
+    let vid=document.getElementById("towel")
+    vid.play();
+    
+    const jsonData={
+        "userId":localStorage.getItem("userId"),
+        "gameId":"DD",
+        "points":Math.ceil(100/minutes) 
+    }
+
+        successAudio.play();
+        toast.innerHTML="Wow, correct!"
+        toast.className = "show";
+        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    
+        shareMe();
+
+        const apiUrl = "https://gfsk-backend.onrender.com/add-points";
+
+        fetch(apiUrl,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }else{
+        popup.style.visibility="visible";
+        failureAudio.play();
+        capture()
+    }
+
+})
+
+marker39.addEventListener("markerLost",(e)=>{
+    let vid=document.getElementById("towel")
+    vid.pause();
+})

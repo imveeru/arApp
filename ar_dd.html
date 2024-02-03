@@ -283,6 +283,8 @@
                 <!-- flowering-plant -->
                 <video id="flowering-plant" loop="false"  src="videos/FloweringPlant.mp4" preload="none"></video>
 
+                <!-- towel -->
+                <video id="towel" loop="false"  src="videos/Towel.mp4" preload="none"></video>
 
                 <!-- lock -->
                 <video id="lock" loop="false"  src="videos/Lock-.mp4" preload="none"></video>
@@ -352,6 +354,23 @@
             >
 
                 <a-video id="flask" rotation="90 0 180" src="#flask" height="1" width="1.78" position="0 0 0" autoplay="false">
+                </a-video>
+            </a-marker>
+
+            <!-- towel -->
+            <a-marker
+                id="animated-marker39"
+                type="pattern"
+                preset="custom"
+                url="markers/m39.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerB"
+                
+            >
+
+                <a-video id="towel" rotation="90 0 180" src="#towel" height="1" width="1.78" position="0 0 0" autoplay="false">
                 </a-video>
             </a-marker>
 
