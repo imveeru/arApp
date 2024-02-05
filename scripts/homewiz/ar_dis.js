@@ -7,6 +7,13 @@ console.log(elements);
 
 const currModel=localStorage.getItem("hw_modelId");
 let toast=document.getElementById("snackbar");
+let isDonno=localStorage.getItem("hw_dis_clue")
+
+if(isDonno==1){
+    console.log("aamaa")
+    toast.innerHTML = `Find <br/> <img width="150" src="markers/${models[currModel]}.png" alt=${model_names[currModel]}/> <br/> ${model_names[currModel]}`;
+    toast.className = "show";
+}
 
 let successAudio=new Audio('audio/success.mp3')
 let failureAudio=new Audio('audio/failure.mp3')
