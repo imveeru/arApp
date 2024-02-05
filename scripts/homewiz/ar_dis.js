@@ -65,7 +65,7 @@ for(i in models){
 
     elements[i].addEventListener("markerFound", (e)=>{ 
 
-        alert(models[i])
+        // alert(models[i])
 
         if (currModel==i){
         
