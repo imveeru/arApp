@@ -1,6 +1,8 @@
-let models=["m41","m42","m43","m84","m45","m46","m85","m48","m50","m49","m51","m52","m53","m86","m55","m56","m57","m58","m59","m60","m61","m62","m87"]
+let models=["m41","m42","m43","m84","m45","m46","m85","m48","m50","m49","m52","m53","m86","m55","m56","m57","m58","m59","m60","m61","m62",]
 
-let model_names=["Loose electrical cord","Slippery tile","Harmful chemical","Unstable furniture","Sharp object","Earthquake-resistant furniture","Fire extinguisher","Emergency supplies kit and an evacuation plan","Baking soda and vinegar","Rusting of metal objects","Tablets","Salt","Ice pack","Detol and bandaid","Blue bin","Yellow bin","Brown bin","White bin","Red bin","Green bin","LED bulbs with star rating","Have plants","Using eco-friendly cleaning products"]
+let model_names=["Loose electrical cord","Slippery tile","Harmful chemical","Unstable furniture","Sharp object","Earthquake-resistant furniture","Fire extinguisher","Emergency supplies kit and an evacuation plan","Baking soda and vinegar","Rusting of metal objects","Salt","Ice pack","Detol and bandaid","Blue bin","Yellow bin","Brown bin","White bin","Red bin","Green bin","LED bulbs with star rating","Have plants"]
+
+let badge_name=["Electric Odyssey","Slick Showdown","Chemical-Conundrum","Furniture Frenzy","Sharper-Quest","Quake-Quest","Inferno-Expedition","Emergency-Evasion","Culinary-Cascade","Atmospheric-Metamorphosis","Fizz Fusion","Saline-Sojourn","Healing-Harmony","Cut-Care","Paper-Palette","Plastic Prism","Aluminum Alloy","Glass Gallery","Chemical Canvas","Biodegradable Bounty","Energy Emissary","Air Alchemist"]
 
 let elements=new Array(model_names.length);
 console.log(elements);
@@ -67,17 +69,17 @@ for(i in models){
 
         if (currModel==i){
         
-        
-        const jsonData={
-            "userId":localStorage.getItem("userId"),
-            "gameId":"DD",
-            "points":Math.ceil(100/minutes) 
-        }
     
             successAudio.play();
-            toast.innerHTML=model_names[i];
+            toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
             toast.className = "show";
             setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+
+            const jsonData={
+                "userId":localStorage.getItem("userId"),
+                "gameId":"HW",
+                "points":Math.ceil(100/minutes) 
+            }
     
             const apiUrl = "https://gfsk-backend.onrender.com/add-points";
     
