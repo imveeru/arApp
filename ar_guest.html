@@ -105,6 +105,11 @@
                 ></a-asset-item>
 
                 <a-asset-item
+                    id="animated-asset-mirror"
+                    src="models/Mirror.glb"
+                ></a-asset-item>
+
+                <a-asset-item
                     id="animated-asset-no"
                     src="assets/no_entry_sign.glb"
                 ></a-asset-item>
@@ -414,6 +419,27 @@
                     scale="0.05 0.05 0.05"
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset4"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+
+            <!-- mirror -->
+            <a-marker
+                id="animated-marker17"
+                type="pattern"
+                preset="custom"
+                url="markers/m17.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerC"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset-mirror"
                     class="clickable"
                     gesture-handler
                 ></a-entity>
