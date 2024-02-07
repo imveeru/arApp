@@ -710,10 +710,12 @@ marker18.addEventListener("markerLost",(e)=>{
     sprayAudio.pause()
 })
 
+let lockAudio=new Audio("audio/Lock.mp3")
 marker23.addEventListener("markerFound", (e)=>{ 
 
-    let vid=document.getElementById("lock")
-    vid.play();
+    // let vid=document.getElementById("lock")
+    // vid.play();
+    lockAudio.play()
     
     const jsonData={
         "userId":localStorage.getItem("userId"),
@@ -721,12 +723,12 @@ marker23.addEventListener("markerFound", (e)=>{
         "points":Math.ceil(100/minutes) 
     }
 
-        successAudio.play();
-        toast.innerHTML="Wow, correct!"
-        toast.className = "show";
-        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        // successAudio.play();
+        // toast.innerHTML="Wow, correct!"
+        // toast.className = "show";
+        // setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
     
-        shareMe();
+        // shareMe();
 
         const apiUrl = "https://gfsk-backend.onrender.com/add-points";
 
@@ -754,7 +756,6 @@ marker23.addEventListener("markerFound", (e)=>{
 
 })
 
-let lockAudio=new Audio("audio/Lock.mp3")
 marker23.addEventListener("markerLost",(e)=>{
     // let vid=document.getElementById("lock")
     // vid.pause();
@@ -763,10 +764,10 @@ marker23.addEventListener("markerLost",(e)=>{
 
 marker32.addEventListener("markerFound", (e)=>{ 
 
-    // let vid=document.getElementById("knife")
-    // vid.play();
+    let vid=document.getElementById("knife")
+    vid.play();
 
-    lockAudio.play()
+    // lockAudio.play()
     
     const jsonData={
         "userId":localStorage.getItem("userId"),
