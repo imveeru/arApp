@@ -9,6 +9,50 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <style>
+
+#snackbar {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #fff;
+            font-family: sans-serif;
+            color: #000;
+            text-align: center;
+            border-radius: 12px;
+            padding: 16px;
+            position: fixed;
+            z-index: 9999999999999999999999999;
+            left: 50%;
+            top: 100px;
+            font-size: 14px;
+            }
+
+            #snackbar.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+
+            @-webkit-keyframes fadein {
+            from {bottom: 0; opacity: 0;} 
+            to {bottom: 30px; opacity: 1;}
+            }
+
+            @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+            }
+
+            @-webkit-keyframes fadeout {
+            from {bottom: 30px; opacity: 1;} 
+            to {bottom: 0; opacity: 0;}
+            }
+
+            @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+            }
+
             .buttons {
               position: absolute;
               top: 0;
@@ -74,9 +118,10 @@
     <body style="margin: 0; overflow: hidden;">
 
         <div class="buttons">
-            <a href="home.html" class="say-hi-button text-lg font-bold">
+            <a href="index.html" class="say-hi-button text-lg font-bold">
                 <!-- <i class="material-icons">arrow_back</i> Back -->
             </a>
+            <div id="snackbar"></div>
         </div>
 
         <a-scene
@@ -92,6 +137,12 @@
                 <a-asset-item
                     id="animated-asset"
                     src="assets/asset.glb"
+                ></a-asset-item>
+
+                <a-asset-item
+                    id="tick"
+                    src="models/checkmark.glb"
+                    rotation="-90 -180 180"
                 ></a-asset-item>
 
                 <a-asset-item
@@ -507,6 +558,255 @@
                     gesture-handler
                 ></a-entity>
             </a-marker>
+
+            <a-marker
+                id="animated-marker-m74"
+                type="pattern"
+                preset="custom"
+                url="markers/m74.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    rotation="-90 -180 180"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m78"
+                type="pattern"
+                preset="custom"
+                url="markers/m78.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    rotation="-90 -180 180"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+<a-marker
+                id="animated-marker-m76"
+                type="pattern"
+                preset="custom"
+                url="markers/m76.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    rotation="-90 -180 180"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m77"
+                type="pattern"
+                preset="custom"
+                url="markers/m77.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    rotation="-90 -180 180"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m88"
+                type="pattern"
+                preset="custom"
+                url="markers/m88.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    rotation="-90 -180 180"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m89"
+                type="pattern"
+                preset="custom"
+                url="markers/m89.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    rotation="-90 -180 180"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m80"
+                type="pattern"
+                preset="custom"
+                url="markers/m80.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    rotation="-90 -180 180"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m81"
+                type="pattern"
+                preset="custom"
+                url="markers/m81.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    rotation="-90 -180 180"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m90"
+                type="pattern"
+                preset="custom"
+                url="markers/m90.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    rotation="-90 -180 180"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+
+    
+            <a-marker
+                id="animated-marker-m87"
+                type="pattern"
+                preset="custom"
+                url="markers/m87.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    rotation="-90 -180 180"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+
+            <a-marker
+                id="animated-marker-m85"
+                type="pattern"
+                preset="custom"
+                url="markers/m85.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.05 0.05 0.05"
+                    rotation="-90 -180 180"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#tick"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+    
+    
+> 
 
             
 
