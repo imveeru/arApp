@@ -1,4 +1,4 @@
-let models=["m41","m42","m43","m84","m45","m46","m85","m48","m50","m49","m52","m53","m86","m55","m56","m57","m58","m59","m60","m61","m62",]
+let models=["m41","m42","m43","m84","m45","m46","m85","m48","m50","m49","m52","m53","m86","m55","m56","m57","m58","m59","m60","m61","m62"]
 
 let model_names=["Loose electrical cord","Slippery tile","Harmful chemical","Unstable furniture","Sharp object","Earthquake-resistant furniture","Fire extinguisher","Emergency supplies kit and an evacuation plan","Baking soda and vinegar","Rusting of metal objects","Salt","Ice pack","Detol and bandaid","Blue bin","Yellow bin","Brown bin","White bin","Red bin","Green bin","LED bulbs with star rating","Have plants"]
 
@@ -89,7 +89,7 @@ m41.addEventListener("markerFound", (e)=>{
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -133,7 +133,7 @@ m42.addEventListener("markerFound", (e)=>{
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -177,7 +177,7 @@ m43.addEventListener("markerFound", (e)=>{
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -221,7 +221,7 @@ m84.addEventListener("markerFound", (e)=>{
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -265,7 +265,7 @@ m45.addEventListener("markerFound", (e)=>{
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -309,7 +309,7 @@ m46.addEventListener("markerFound", (e)=>{
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -349,11 +349,11 @@ m85.addEventListener("markerFound", (e)=>{
 
     // alert(models[i])
 
-    if (currModel==7){
+    if (currModel==6){
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -393,11 +393,11 @@ m48.addEventListener("markerFound", (e)=>{
 
     // alert(models[i])
 
-    if (currModel==8){
+    if (currModel==7){
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -438,11 +438,11 @@ m50.addEventListener("markerFound", (e)=>{
 
     // alert(models[i])
 
-    if (currModel==9){
+    if (currModel==8){
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -482,11 +482,11 @@ m49.addEventListener("markerFound", (e)=>{
 
     // alert(models[i])
 
-    if (currModel==10){
+    if (currModel==9){
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -526,11 +526,11 @@ m52.addEventListener("markerFound", (e)=>{
 
     // alert(models[i])
 
-    if (currModel==11){
+    if (currModel==10){
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -570,11 +570,11 @@ m53.addEventListener("markerFound", (e)=>{
 
     // alert(models[i])
 
-    if (currModel==12){
+    if (currModel==11){
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -614,11 +614,11 @@ m86.addEventListener("markerFound", (e)=>{
 
     // alert(models[i])
 
-    if (currModel==13){
+    if (currModel==12){
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -658,11 +658,11 @@ m55.addEventListener("markerFound", (e)=>{
 
     // alert(models[i])
 
-    if (currModel==14){
+    if (currModel==13){
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -703,11 +703,11 @@ m56.addEventListener("markerFound", (e)=>{
 
     // alert(models[i])
 
-    if (currModel==15){
+    if (currModel==14){
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -747,11 +747,11 @@ m57.addEventListener("markerFound", (e)=>{
 
     // alert(models[i])
 
-    if (currModel==16){
+    if (currModel==15){
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -791,11 +791,11 @@ m58.addEventListener("markerFound", (e)=>{
 
     // alert(models[i])
 
-    if (currModel==17){
+    if (currModel==16){
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -835,11 +835,11 @@ m59.addEventListener("markerFound", (e)=>{
 
     // alert(models[i])
 
-    if (currModel==18){
+    if (currModel==17){
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -879,11 +879,11 @@ m60.addEventListener("markerFound", (e)=>{
 
     // alert(models[i])
 
-    if (currModel==19){
+    if (currModel==18){
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -923,11 +923,11 @@ m61.addEventListener("markerFound", (e)=>{
 
     // alert(models[i])
 
-    if (currModel==20){
+    if (currModel==19){
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
@@ -967,11 +967,11 @@ m62.addEventListener("markerFound", (e)=>{
 
     // alert(models[i])
 
-    if (currModel==21){
+    if (currModel==20){
     
 
         successAudio.play();
-        toast.innerHTML=`<img width="100" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 

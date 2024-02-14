@@ -211,11 +211,11 @@ m78.addEventListener("markerFound", (e)=>{
 m76.addEventListener("markerFound", (e)=>{ 
 
     // alert(models[i])
-    console.log("Scanned");
+    console.log("Scanned m76");
 
     if (currModel==2){
         successAudio.play();
-        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[i]}`;
+        toast.innerHTML=`<img width="200" src="hw_badges/${badge_name[currModel]}.svg" alt=${badge_name[currModel]}/> <br/> ${model_names[currModel]}`;
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
